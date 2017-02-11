@@ -181,10 +181,10 @@ a:hover.icon-delete  {
 /*         background-image: linear-gradient(135deg, rgb(3,8,12), rgb(16,57,79)); */
 	height:100%;
 	overflow:hidden;
-	width:340px; 
+	width:21%; 
 	position:fixed;
 	top:0;
-	right:-280px;
+	right:-17%;
 	z-index:1000;
 	
 	 filter:alpha(opacity=90);
@@ -198,20 +198,19 @@ a:hover.icon-delete  {
 	font-size:4em;
 	color:white;
 	position:fixed;
-	right:5px;
-	top:-20px;
+	top:-3.5%;
 
 	
 	}
 #lateral:hover:before, #lateral:focus:before {
-left:500px;
+left:100%;
 	}
 #lateral:hover, #lateral:focus,  #lateral:active  {
 	overflow-y:scroll;
-	-moz-transform: translate(-280px,0);
-		-webkit-transform: translate(-280px,0);
-			-o-transform: translate(-280px,0);
-				transform: translate(-280px,0);
+	-moz-transform: translate(-70%,0);
+		-webkit-transform: tranlate(-70%,0);
+			-o-transform: translate(-70%,0);
+				transform: translate(-70%,0);
 	padding-left:0;
 		z-index:1000;
 	
@@ -480,5 +479,10 @@ td.options-width {
 	width: 210px;
 }
 	
-			
+.btadd	{
+	
+	width:100%;
+	height: 150px; 
+	background-image: url("../resources/images/add.png");
+}		
 }

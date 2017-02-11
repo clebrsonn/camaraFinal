@@ -75,17 +75,16 @@
 		  </c:when>
 		
 		</c:choose>
-
-    </c:forEach>             
+            
+     </c:forEach>             
             </table>
             
-            </form>
+<!--      <div id="sForm" class="sForm sFormPadding"> -->
+<!--         <span id="button close" class="button close"><img src="http://i.imgur.com/nnzONel.png" alt="X"  class="" /></span> -->
+<!--         <h2 class="title">Adicionar Nova Reunião</h2>   -->
+<!--     </div> -->
+            
 </div>
 
 
 
-
-</div>
-
-
-</div>
