@@ -6,12 +6,11 @@
 
       <table class="flatTable">
     			
-    			<tr class="titleTr">
+    	<tr class="titleTr">
 				    <td class="titleTd">VEREADORES</td>
 				       <td class="search"> <input type="text"></td>
-				    	<td colspan="2"></td>
-				 
-				    <td class="plusTd"></td>
+				    <td colspan="2"></td>
+				    <td><a href="#cadastro" rel="modal" ><img src="${pageContext.request.contextPath}/resources/images/add.png"></div></a></td>
   				</tr>
   				
   				 <tr class="headingTr">
@@ -83,8 +82,95 @@
 <!--         <span id="button close" class="button close"><img src="http://i.imgur.com/nnzONel.png" alt="X"  class="" /></span> -->
 <!--         <h2 class="title">Adicionar Nova Reunião</h2>   -->
 <!--     </div> -->
-            
+
+<div class="window" id="cadastro">
+    <a href="#" class="fechar"><img alt="" src="${pageContext.request.contextPath}/resources/images/exitt.png"></a>
+   <h2> Cadastro Vereadores </h2> 
+<div id="form"> 
+ 
+ <form id="formVereador" action="add" method="POST">
+ 
+ 
+ 
+   <!-- 				DADOS DO REGISTRO DIVIDIDOS EM DOIS PARAGRAFOS	 -->
+			
+<!-- 			<fieldset> -->
+				
+<!-- 				<legend>Dados do Registro</legend> -->
+			
+			
+<!-- 				<p>Data Criacao: -->
+<!-- 					<input name="datacriacao" type="date" class="inp-form" /> -->
+<%-- 					<fmt:formatDate type="date"  value="${registro.data}" pattern="dd/MM/yyyy"/> --%>
+				
+				
+<!-- 				Usuario Criou: -->
+<!-- 				<input name="usuario" type="date" class="inp-form" /> -->
+<%-- 				<fmt:formatDate type="date"  value="${registro.usuario}" pattern="dd/MM/yyyy"/> --%>
+				
+			
+<!-- 				Data Ultima Modificacao: -->
+<!-- 				<input name="datamodificacao" type="date" class="inp-form" /> -->
+<%-- 				<fmt:formatDate type="date"  value="${registro.datamodificacao}" pattern="dd/MM/yyyy"/> --%>
+				
+<!-- 				</p> -->
+				
+<!-- 				<p> -->
+				
+<!-- 				Usuario Modificou: -->
+<!-- 				<input name="usuario" type="text" class="inp-form"/> -->
+<%-- 				<fmt:formatDate type="date"  value="${registro.usuario}" pattern="dd/MM/yyyy"/> --%>
+				
+				
+<!-- 				Status: -->
+<!-- 				<input name="status" type="text" class="inp-form" /> -->
+<%-- 				<fmt:formatDate type="date"  value="${registro.status}" pattern="dd/MM/yyyy"/> --%>
+				
+<!-- 			</p> -->
+			
+<!-- 			</fieldset> -->
+			
+			
+	<fieldset>
+		
+		<legend>Dados do Vereador</legend>
+
+			<p>Id Vereador
+				<input id="id" name="id" type="text" readonly="readonly"/>
+			</p>
+			
+			<p>Nome
+				<input id="nome" name="nome" type="text" />
+			</p>
+			<p>Telefone
+				<input id="telefone" name="telefone" type="text" />
+			</p>
+			
+           
+			<p>Email
+				<input id="email" name="email" type="text" />
+			</p>
+	
+			
+			<div id="botoes">
+				<button class="button">Adicionar</button>
+				<button class="button">Apagar</button>
+			</div>
+			
+	</fieldset>
+				
+
+				
+
+</form>
 </div>
+</div>
+    
+    <div id="mascara"></div>
+    
+    
+</div>
+
 
 
 

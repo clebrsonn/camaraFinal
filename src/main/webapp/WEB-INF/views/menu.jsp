@@ -37,7 +37,7 @@
 	<li class="topmenu"><a href="${pageContext.request.contextPath}/reuniao/movimentacao"><img alt="" src="${pageContext.request.contextPath}/resources/images/reuniao.png">REUNIÃO</a></li>
 	<li class="topmenu"><a href="${pageContext.request.contextPath}/vereador/movimentacao"><img alt="" src="${pageContext.request.contextPath}/resources/images/vereador.png">VEREADORES</a></li>
 			<li class="topmenu"><a href="${pageContext.request.contextPath}/usuario/movimentacao"><img alt="" src="${pageContext.request.contextPath}/resources/images/usuario.png">USUARIO</a></li>
-	<li class="toplast"><a href="${pageContext.request.contextPath}/reuniao/movimentacao"><img alt="" src="${pageContext.request.contextPath}/resources/images/relatorio.png">RELATÓRIOS</a></li>
+	<li class="toplast"><a href="${pageContext.request.contextPath}/relatorio/movimentacao"><img alt="" src="${pageContext.request.contextPath}/resources/images/relatorio.png">RELATÓRIOS</a></li>
 <%-- 	<li class="toplast"><a href="${pageContext.request.contextPath}/vereador/movimentacao"><img alt="" src="${pageContext.request.contextPath}/resources/images/exit.png">SAIR</a></li> --%>
 
 

@@ -380,9 +380,13 @@ text-align: center;
   color: #f6f3f7;
   background: #418a95;
   border: 0px solid;
-/*   width: 100%; */
+  width: 100%;
 }
 .flatTable .plusTd {
+  background: url("../images/add.png")center no-repeat;
+}
+
+.plusTd {
   background: url("../images/add.png")center no-repeat;
 }
 .flatTable .controlTd {
@@ -485,4 +489,33 @@ td.options-width {
 	height: 150px; 
 	background-image: url("../resources/images/add.png");
 }		
+
+.window{
+    display:none;
+    width:70%;
+    height:450px;
+    position:absolute;
+    left:0;
+    top:0;
+    background:#FFF;
+    z-index:9900;
+    padding:10px;
+    border-radius:10px;
+}
+ 
+#mascara{
+    display:none;
+    position:absolute;
+    left:0;
+    top:0;
+    z-index:9000;
+    background-color:#000;
+}
+ 
+.fechar{
+	display:block; 
+	text-align:right;
+	background-image: url("../resources/images/exitt.png");
+	
+	}
 }

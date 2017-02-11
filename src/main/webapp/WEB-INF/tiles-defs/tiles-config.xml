@@ -201,7 +201,13 @@
 
     </definition>
 
+    <definition name="movimentacaorelatorio" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/movimentacao/movimentacaorelatorio.jsp"/>
+        <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>
 
+    </definition>
+    
+    
     <definition name="movimentacaocliente" extends="defaultTemplate">
         <put-attribute name="conteudo" value="/WEB-INF/views/jsp/movimentacao/movimentacaocliente.jsp"/>
         <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>
