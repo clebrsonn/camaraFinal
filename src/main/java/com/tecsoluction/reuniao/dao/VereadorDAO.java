@@ -4,7 +4,6 @@ import javax.persistence.TypedQuery;
 
 import org.springframework.stereotype.Repository;
 
-import com.tecsoluction.reuniao.entidade.Usuario;
 import com.tecsoluction.reuniao.entidade.Vereador;
 import com.tecsoluction.reuniao.framework.AbstractEntityDao;
 

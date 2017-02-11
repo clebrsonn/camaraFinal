@@ -215,40 +215,40 @@
     </definition>
 
 
-    <definition name="movimentacaocomposicao" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/movimentacao/movimentacaocomposicao.jsp"/>
+    <definition name="movimentacaoexpediente" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/movimentacao/movimentacaoexpediente.jsp"/>
         <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>
 
     </definition>
 
 
-    <definition name="movimentacaodesconto" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/movimentacao/movimentacaodesconto.jsp"/>
+    <definition name="movimentacaomocao" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/movimentacao/movimentacaomocao.jsp"/>
         <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>
 
     </definition>
 
 
-    <definition name="movimentacaodespesa" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/movimentacao/movimentacaodespesa.jsp"/>
+    <definition name="movimentacaooradoresdia" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/movimentacao/movimentacaooradoresdia.jsp"/>
         <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>
 
     </definition>
 
-    <definition name="movimentacaofornecedor" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/movimentacao/movimentacaofornecedor.jsp"/>
+    <definition name="movimentacaoordemdia" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/movimentacao/movimentacaoordemdia.jsp"/>
         <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>
 
     </definition>
 
-    <definition name="movimentacaogarcon" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/movimentacao/movimentacaogarcon.jsp"/>
+    <definition name="movimentacaoprojetolei" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/movimentacao/movimentacaoprojetolei.jsp"/>
         <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>
 
     </definition>
 
-    <definition name="movimentacaopagamento" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/movimentacao/movimentacaopagamento.jsp"/>
+    <definition name="movimentacaorequerimento" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/movimentacao/movimentacaorequerimento.jsp"/>
         <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>
 
     </definition>

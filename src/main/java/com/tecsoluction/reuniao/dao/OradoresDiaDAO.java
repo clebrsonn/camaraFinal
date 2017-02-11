@@ -4,13 +4,13 @@ import javax.persistence.TypedQuery;
 
 import org.springframework.stereotype.Repository;
 
-import com.tecsoluction.reuniao.entidade.Ata;
+import com.tecsoluction.reuniao.entidade.OradoresDia;
 import com.tecsoluction.reuniao.framework.AbstractEntityDao;
 
 
 
 @Repository
-public class AtaDAO extends AbstractEntityDao<Ata>{
+public class OradoresDiaDAO extends AbstractEntityDao<OradoresDia>{
 
 	
 	
@@ -19,8 +19,8 @@ public class AtaDAO extends AbstractEntityDao<Ata>{
 	
 	
 	
-	public AtaDAO() {
-		super(Ata.class, "Ata");
+	public OradoresDiaDAO() {
+		super(OradoresDia.class, "OradoresDia");
 		// TODO Auto-generated constructor stub
 	}
 
