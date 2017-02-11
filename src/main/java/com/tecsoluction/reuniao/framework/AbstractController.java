@@ -1,5 +1,7 @@
 package com.tecsoluction.reuniao.framework;
 
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,7 +21,7 @@ public abstract class AbstractController<Entity> {
         this.entityAlias = entityAlias;
     }
 
-    protected abstract AbstractEntityDao<Entity> getDao();
+    protected abstract CrudRepository<Entity, Long> getDao();
 
     @RequestMapping(value = "cadastro", method = RequestMethod.GET)
     public ModelAndView cadastrarEntity() {
@@ -27,7 +29,7 @@ public abstract class AbstractController<Entity> {
         ModelAndView cadastro = new ModelAndView("cadastro" + entityAlias);
 //        cadastro.addObject("acao", "add");
 
-        List<Entity> entityList = getDao().getAll();
+        Iterable<Entity> entityList = getDao().findAll();
 //    	 
 //    	 cadastro.addObject("entityList", entityList);
 
@@ -42,7 +44,7 @@ public abstract class AbstractController<Entity> {
 
 //        ModelAndView cadastroEntity = new ModelAndView("cadastro" + entityAlias);
 
-        getDao().add(entity);
+        getDao().save(entity);
 //        getDao().PegarPorId(entity);
 
 //        cadastroEntity.addObject("entity", entity);
@@ -59,7 +61,7 @@ public abstract class AbstractController<Entity> {
 
         ModelAndView movimentacao = new ModelAndView("movimentacao" + entityAlias);
 
-        List<Entity> entityList = getDao().getAll();
+        Iterable<Entity> entityList = getDao().findAll();
 
         movimentacao.addObject(entityAlias + "List", entityList);
 
@@ -73,7 +75,7 @@ public abstract class AbstractController<Entity> {
         Entity entity;
         long idf = Long.parseLong(request.getParameter("id"));
         ModelAndView edicao = new ModelAndView("edicao" + entityAlias);
-        entity = getDao().PegarPorId(idf);
+        entity = getDao().findOne(idf);
         edicao.addObject(entityAlias, entity);
         edicao.addObject("acao", "edicao");
 
@@ -87,7 +89,7 @@ public abstract class AbstractController<Entity> {
 
 
         Long idf = Long.parseLong(request.getParameter("id"));
-        getDao().editar(entity);
+        getDao().(entity);
 
 
         return new ModelAndView("redirect:/" + entityAlias + "/" + "movimentacao");
