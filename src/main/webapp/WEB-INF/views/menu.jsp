@@ -25,7 +25,7 @@
 <!-- Start css3menu.com BODY section -->
 <ul id="menu" class="topmenu">
 	<li class="switch"><label onclick="" for="css3menu-switcher"></label></li>
-	<li class="topfirst"><a href="${pageContext.request.contextPath}/movimentacao" ><img alt="" src="${pageContext.request.contextPath}/resources/images/ata.png">ATAS</a></li>
+	<li class="topfirst"><a href="${pageContext.request.contextPath}/ata/movimentacao" ><img alt="" src="${pageContext.request.contextPath}/resources/images/ata.png">ATAS</a></li>
 	<li class="topmenu"><a href="${pageContext.request.contextPath}/movimentacao"><img alt="" src="${pageContext.request.contextPath}/resources/images/expediente.png">EXPEDIENTE</a></li>
 	<li class="topmenu"><a href="${pageContext.request.contextPath}/movimentacao"><img alt="" src="${pageContext.request.contextPath}/resources/images/oradoresdia.png">ORADORES DIA</a></li>
 <%-- 	<li class="topmenu"><a href="${pageContext.request.contextPath}/movimentacao"><img alt="" src="${pageContext.request.contextPath}/resources/images/delete.png">MOCÃO</a></li> --%>

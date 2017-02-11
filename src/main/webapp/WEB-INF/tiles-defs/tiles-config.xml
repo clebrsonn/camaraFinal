@@ -208,8 +208,8 @@
     </definition>
     
     
-    <definition name="movimentacaocliente" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/movimentacao/movimentacaocliente.jsp"/>
+    <definition name="movimentacaoata" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/movimentacao/movimentacaoata.jsp"/>
         <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>
 
     </definition>

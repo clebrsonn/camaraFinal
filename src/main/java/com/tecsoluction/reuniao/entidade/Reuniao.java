@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -48,9 +49,15 @@ public class Reuniao implements Serializable{
 //
 	    @Column(name = "PRIMEIROSECRETARIO")
 	    private String primeirosecretario;
+	    
+	    @OneToOne
+	    private Ata ata;
 
 	
 	
+	
+
+
 	public Reuniao() {
 		// TODO Auto-generated constructor stub
 	}
@@ -68,6 +75,15 @@ public class Reuniao implements Serializable{
 	}
 
 
+	public Ata getAta() {
+		return ata;
+	}
+
+
+
+	public void setAta(Ata ata) {
+		this.ata = ata;
+	}
 
 
 	public Date getDatareuniao() {

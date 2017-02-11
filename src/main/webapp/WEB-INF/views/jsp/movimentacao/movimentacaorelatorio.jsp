@@ -7,7 +7,7 @@
       <table class="flatTable">
     			
     	<tr class="titleTr">
-				    <td class="titleTd">Relatórios</td>
+				    <td class="titleTd">RELATÓRIOS</td>
 				       <td class="search"> <input type="text"></td>
 				    <td colspan="2"></td>
 				    <td><a href="#cadastro" rel="modal" ><img src="${pageContext.request.contextPath}/resources/images/add.png"></div></a></td>
