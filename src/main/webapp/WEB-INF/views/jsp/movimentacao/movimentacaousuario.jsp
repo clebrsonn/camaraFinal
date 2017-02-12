@@ -141,18 +141,18 @@
 				<input id="senha" name="senha" type="text" />
 			</p>
 			
-            <p> Tipo:
-	            <select id="tipo" name="tipo" id="files" class="inp-form">           
-	                <optgroup label="Tipos de Usuario">
-	           			<c:forEach var="tipo" items="${tipoList}">
+<!--             <p> Tipo: -->
+<!-- 	            <select id="tipo" name="tipo" id="files" class="inp-form">            -->
+<!-- 	                <optgroup label="Tipos de Usuario"> -->
+<%-- 	           			<c:forEach var="tipo" items="${tipoList}"> --%>
 	           			
-	           				<option value="${tipo}">${tipo}</option>
+<%-- 	           				<option value="${tipo}">${tipo}</option> --%>
 	           				      				
 	           				
-	       				</c:forEach>
-	                </optgroup>
-	            </select>
-			</p>
+<%-- 	       				</c:forEach> --%>
+<!-- 	                </optgroup> -->
+<!-- 	            </select> -->
+<!-- 			</p> -->
 			<p>Email
 				<input id="email" name="email" type="text" />
 			</p>
