@@ -1,7 +1,6 @@
 package com.tecsoluction.reuniao.framework;
 
 import org.springframework.data.repository.CrudRepository;
-import org.springframework.data.repository.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,7 +8,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.List;
 
 
 public abstract class AbstractController<Entity> {
@@ -29,7 +27,7 @@ public abstract class AbstractController<Entity> {
         ModelAndView cadastro = new ModelAndView("cadastro" + entityAlias);
 //        cadastro.addObject("acao", "add");
 
-        Iterable<Entity> entityList = getDao().findAll();
+//        Iterable<Entity> entityList = getDao().findAll();
 //    	 
 //    	 cadastro.addObject("entityList", entityList);
 
@@ -89,7 +87,7 @@ public abstract class AbstractController<Entity> {
 
 
         Long idf = Long.parseLong(request.getParameter("id"));
-        getDao().(entity);
+        getDao().save(entity);
 
 
         return new ModelAndView("redirect:/" + entityAlias + "/" + "movimentacao");
