@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * Handles requests for the application home page.
  */
 @Controller
-@RequestMapping(value = "usuario")
+@RequestMapping(value = "usuario/")
 public class UsuarioController extends AbstractController<Usuario> {
 
     private static final Logger logger = LoggerFactory.getLogger(UsuarioController.class);
@@ -34,6 +34,4 @@ public class UsuarioController extends AbstractController<Usuario> {
         // TODO Auto-generated method stub
         return dao;
     }
-
-
 }
