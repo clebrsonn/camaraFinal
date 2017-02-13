@@ -1,6 +1,6 @@
 package com.tecsoluction.reuniao.framework;
 
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 
 public abstract class AbstractController<Entity> {
@@ -19,7 +20,7 @@ public abstract class AbstractController<Entity> {
         this.entityAlias = entityAlias;
     }
 
-    protected abstract CrudRepository<Entity, Long> getDao();
+    protected abstract JpaRepository<Entity, Long> getDao();
 
     @RequestMapping(value = "cadastro", method = RequestMethod.GET)
     public ModelAndView cadastrarEntity() {
@@ -49,7 +50,7 @@ public abstract class AbstractController<Entity> {
 
         System.out.println(entityAlias);
         return "redirect:cadastro";//cadastroEntity;
-       
+
 //        return new ModelAndView("redirect:/" + entityAlias + "/cadastro");
     }
 
@@ -59,7 +60,7 @@ public abstract class AbstractController<Entity> {
 
         ModelAndView movimentacao = new ModelAndView("movimentacao" + entityAlias);
 
-        Iterable<Entity> entityList = getDao().findAll();
+        List<Entity> entityList = getDao().findAll();
 
         movimentacao.addObject(entityAlias + "List", entityList);
 
