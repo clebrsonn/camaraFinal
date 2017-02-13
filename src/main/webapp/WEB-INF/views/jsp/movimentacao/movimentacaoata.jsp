@@ -3,73 +3,79 @@
 
 <div id="conteudo" class="conteudo">
 
+
       <table class="flatTable">
     			
     	<tr class="titleTr">
-				    <td class="titleTd">USUARIOS</td>
+				    <td class="titleTd">Atas</td>
 				       <td class="search"> <input type="text"></td>
-				    <td colspan="2"></td>
-				    <td><a href="#cadastroadd" rel="modal" ><img src="${pageContext.request.contextPath}/resources/images/add.png"></div></a></td>
+				    <td colspan="1"></td>
+				    <td><a href="#cadastro" rel="modal" ><img src="${pageContext.request.contextPath}/resources/images/add.png"></div></a></td>
   				</tr>
   				
-  				
-  				<tr class="headingTr">
+  				 <tr class="headingTr">
   				    <td>Id</td>
-				    <td>Nome</td>
-				    <td>Senha</td>
-				    <td>Email</td>
+				    <td>Data</td>
+				    <td>Reuniao</td>
+<!-- 				    <td>Email</td> -->
+<!-- 				    <td>Hora</td> -->
+<!-- 				     <td>Presidente</td> -->
+<!-- 				    <td>Primeiro Secretário</td> -->
+<!-- 				    <td>Status</td> -->
 				    <td>Ação</td>
 				    
 				    </tr>
-
-     
-  <c:forEach var="usuario" items="${usuarioList}" varStatus="id">
+  				 
+  				 
+      
+  <c:forEach var="ata" items="${ataList}" varStatus="id">
 
 		<c:choose>
-		  <c:when test="${usuario.id % 2 == 0}">
-		    <tr>
-			      <td>${usuario.id}</td>
-                  <td>${usuario.nome}</td>
-                  <td ><input type="password" value="${usuario.senha}"></td>
-                  <td>${usuario.email}</td>
-
-	 <td class="options-width">
-			        
-			     
-                        <a href="edicao?id=${usuario.id}" title="Edit"><img src="${pageContext.request.contextPath}/resources/images/visualizar.png" alt="X"/></a>
-                        <a href="/delete?id=${usuario.id}"  title="aaa"><img src="${pageContext.request.contextPath}/resources/images/editar.png" alt="placeholder icon" /></a>
-                         <a href="/edit?id=${usuario.id}" title="bbb"><img src="${pageContext.request.contextPath}/resources/images/excluir.png" alt="placeholder icon" /></a>
-                                               
-                        
-                    </td>
-			  </tr>
-		  </c:when>
-		  
-		  <c:when test="${usuario.id % 2 != 0}">
-		           	    <tr>
-			     <td>${usuario.id}</td>
-		                     <td>${usuario.nome}</td>
-		                    <td ><input type="password" value="${usuario.senha}"></td>
-		                     <td>${usuario.email}</td>
+		  <c:when test="${ata.id % 2 == 0}">
+		    <tr class="trow">
+			     <td>${ata.id}</td>
+		                     <td><input type="date" value="${ata.data}"></td>
+				    <td>${ata.reuniao}</td>
+<%-- 		                     <td>${vereador.email}</td> --%>
 <%-- 		                    <td>${vereador.hora}</td> --%>
 <%-- 		                      <td>${vereador.presidente}</td> --%>
 <%-- 		                     	<td>${vereador.primeirosecretario}</td> --%>
-			    <td class="options-width">
+			     <td class="options-width">
 			        
 			     
-                        <a href="edicao?id=${usuario.id}" title="Edit"><img src="${pageContext.request.contextPath}/resources/images/visualizar.png" alt="X"/></a>
-                        <a href="/delete?id=${usuario.id}"  title="aaa"><img src="${pageContext.request.contextPath}/resources/images/editar.png" alt="placeholder icon" /></a>
-                         <a href="/edit?id=${usuario.id}" title="bbb"><img src="${pageContext.request.contextPath}/resources/images/excluir.png" alt="placeholder icon" /></a>
+                        <a href="edicao?id=${ata.id}" title="Edit"><img src="${pageContext.request.contextPath}/resources/images/visualizar.png" alt="X"/></a>
+                        <a href="/delete?id=${ata.id}"  title="aaa"><img src="${pageContext.request.contextPath}/resources/images/editar.png" alt="placeholder icon" /></a>
+                         <a href="/edit?id=${ata.id}" title="bbb"><img src="${pageContext.request.contextPath}/resources/images/excluir.png" alt="placeholder icon" /></a>
                                                
                         
                     </td>
 			  </tr>
-			  
+		    
+		  </c:when>
+		  <c:when test="${ata.id % 2 != 0}">
+		           <tr class="trow">
+			     <td>${ata.id}</td>
+		                     <td><input type="date" value="${ata.data}"></td>
+				    <td>${ata.reuniao}</td>
+<%-- 		                     <td>${vereador.email}</td> --%>
+<%-- 		                    <td>${vereador.hora}</td> --%>
+<%-- 		                      <td>${vereador.presidente}</td> --%>
+<%-- 		                     	<td>${vereador.primeirosecretario}</td> --%>
+			     <td class="options-width">
+			        
+			     
+                        <a href="edicao?id=${ata.id}" title="Edit"><img src="${pageContext.request.contextPath}/resources/images/visualizar.png" alt="X"/></a>
+                        <a href="/delete?id=${ata.id}"  title="aaa"><img src="${pageContext.request.contextPath}/resources/images/editar.png" alt="placeholder icon" /></a>
+                         <a href="/edit?id=${ata.id}" title="bbb"><img src="${pageContext.request.contextPath}/resources/images/excluir.png" alt="placeholder icon" /></a>
+                                               
+                        
+                    </td>
+			  </tr>
 		  </c:when>
 		
 		</c:choose>
-
-    </c:forEach>             
+            
+     </c:forEach>             
             </table>
             
 <!--      <div id="sForm" class="sForm sFormPadding"> -->
@@ -77,13 +83,12 @@
 <!--         <h2 class="title">Adicionar Nova Reunião</h2>   -->
 <!--     </div> -->
 
-<div class="window" id="cadastroadd">
+<div class="window" id="cadastro">
     <a href="#" class="fechar"><img alt="" src="${pageContext.request.contextPath}/resources/images/exitt.png"></a>
-
-<h2> Cadastro Usuario </h2> 
+   <h2> Cadastro Atas </h2> 
 <div id="form"> 
  
- <form id="formUsuario" action="add" method="POST">
+ <form id="formAtas" action="add" method="POST">
  
  
  
@@ -128,35 +133,26 @@
 			
 	<fieldset>
 		
-		<legend>Dados do Usuario</legend>
+		<legend>Dados da Ata</legend>
 
-			<p>Id Usuario
+			<p>Id 
 				<input id="id" name="id" type="text" readonly="readonly"/>
 			</p>
 			
-			<p>Nome
-				<input id="nome" name="nome" type="text" />
+			<p>Data
+				<input id="data" name="data" type="text" />
 			</p>
-			<p>Senha
-				<input id="senha" name="senha" type="text" />
-			</p>
-			
-<!--             <p> Tipo: -->
-<!-- 	            <select id="tipo" name="tipo" id="files" class="inp-form">            -->
-<!-- 	                <optgroup label="Tipos de Usuario"> -->
-<%-- 	           			<c:forEach var="tipo" items="${tipoList}"> --%>
-	           			
-<%-- 	           				<option value="${tipo}">${tipo}</option> --%>
-	           				      				
-	           				
-<%-- 	       				</c:forEach> --%>
-<!-- 	                </optgroup> -->
-<!-- 	            </select> -->
+<!-- 			<p>Telefone -->
+<!-- 				<input id="telefone" name="telefone" type="text" /> -->
 <!-- 			</p> -->
-			<p>Email
-				<input id="email" name="email" type="text" />
+			
+           
+<!-- 			<p>Email -->
+<!-- 				<input id="email" name="email" type="text" /> -->
+<!-- 			</p> -->
+			<p>Reunião
+				<input id="reuniao" name="reuniao" type="text" />
 			</p>
-	
 			
 			<div id="botoes">
 				<button class="button">Adicionar</button>
@@ -176,7 +172,6 @@
     
     
 </div>
-
 
 
 
