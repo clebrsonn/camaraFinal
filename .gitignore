@@ -1,2 +1,8 @@
 /target/
 .idea
+*.iml
+.springBeans
+.classpath
+.project
+.settings
+target/

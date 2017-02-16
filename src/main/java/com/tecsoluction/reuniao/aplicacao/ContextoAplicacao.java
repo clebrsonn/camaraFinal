@@ -26,10 +26,10 @@ public class ContextoAplicacao {
         this.usuarioDao = usuarioAtt;
     }
 
-    
+
     @ModelAttribute
     public void addAttributes(Model model) {
-        Usuario usuarioAtt = usuarioDao.PegarPorId(1);
+        Usuario usuarioAtt = usuarioDao.findOne(00002L);
         model.addAttribute("usuarioAtt", usuarioAtt);
     }
 
