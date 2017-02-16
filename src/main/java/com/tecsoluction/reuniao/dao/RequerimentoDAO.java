@@ -1,49 +1,17 @@
 package com.tecsoluction.reuniao.dao;
 
-import javax.persistence.TypedQuery;
-
-import org.springframework.stereotype.Repository;
-
 import com.tecsoluction.reuniao.entidade.Requerimento;
 import com.tecsoluction.reuniao.framework.AbstractEntityDao;
+import org.springframework.stereotype.Repository;
 
 
 
 @Repository
 public class RequerimentoDAO extends AbstractEntityDao<Requerimento>{
 
-	
-	
-	
-	
-	
-	
-	
 	public RequerimentoDAO() {
 		super(Requerimento.class, "Requerimento");
 		// TODO Auto-generated constructor stub
-	}
-
-	
-	
-	
-	
-	@Override
-	protected void appendPredicate(StringBuilder predicate) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	protected void setParameters(TypedQuery<?> query) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	protected void appendOrder(StringBuilder predicate) {
-		// TODO Auto-generated method stub
-		
 	}
 
 }
