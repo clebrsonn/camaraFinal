@@ -46,11 +46,11 @@ public class LoginController {
 
 //		chamar algum m�todo de autentica��o
 
-        usuario = new Usuario();
-        usuario.setId(00001L);
-        usuario.setNome("Cristina Alves");
-        usuario.setSenha("1321645");
-        usuario.setEmail("lalalal@alal.com");
+//        usuario = new Usuario();
+//        usuario.setId(00001L);
+//        usuario.setNome("Cristina Alves");
+//        usuario.setSenha("1321645");
+//        usuario.setEmail("lalalal@alal.com");
 
         ModelAndView home = new ModelAndView("home");
 
