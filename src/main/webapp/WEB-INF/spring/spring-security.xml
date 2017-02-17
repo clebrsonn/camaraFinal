@@ -1,15 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<b:beans xmlns="http://www.springframework.org/schema/security"
-		 xmlns:b="http://www.springframework.org/schema/beans"
-		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-		 xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-						http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
+<b:beans xmlns:security="http://www.springframework.org/schema/security"
+	xmlns:b="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+ 						http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
 
 
-    <security:http auto-config="true">
-        <security:intercept-url pattern="/post/publicar/**" access="ROLE_MEMBRO"/>
-        <security:intercept-url pattern="/usuario/editar/**" access="ROLE_ADMIN,ROLE_MEMBRO"/>
-        <security:intercept-url pattern="/**" access="ROLE_ANONYMOUS"/>
-    </security:http>
+	<security:http auto-config="true">
+		<security:intercept-url pattern="/post/publicar/**"
+			access="ROLE_MEMBRO" />
+	</security:http>
 
-</beans>
+
+	<security:authentication-manager>
+
+		<security:authentication-provider>
+
+			<security:user-service>
+
+				<security:user name="bruce" password="lee"
+					authorities="ROLE_MEMBRO" />
+
+				<security:user name="admin" password="admin"
+					authorities="ROLE_MEMBRO,ROLE_ADMIN" />
+
+			</security:user-service>
+
+		</security:authentication-provider>
+
+	</security:authentication-manager>
+
+</b:beans>
