@@ -9,9 +9,9 @@
 					<div class="head">
 						<img src="resources/images/userlogin.png" alt=""/>
 					</div>
-				<form id="formlogin" action="home" method="post">
-						<input type="text" class="text" value="USERNAME" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'USERNAME';}" >
-						<input type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}">
+				<form id="formlogin" action="login" method="post">
+						<input type="text" id="login" name="login"class="text" value="USERNAME" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'USERNAME';}" >
+						<input type="password" id="senha" name="senha" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}">
 						<div class="submit">
 							<input type="submit" onclick="myFunction()" value="LOGIN" >
 							<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" >

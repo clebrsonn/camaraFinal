@@ -53,26 +53,27 @@ public class LoginController {
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public ModelAndView Autenticacao(@RequestParam("login") String login, @RequestParam("senha") String senha, HttpSession sessao) {
+    public String Autenticacao(@RequestParam("login") String login, @RequestParam("senha") String senha, HttpSession sessao) {
     	
     		Usuario usuario = daoimpl.getUsuario(login, senha);
-    		if (usuario == null) {
+    		if (usuario != null) {
     			
-    			ModelAndView mv = new ModelAndView("erro");
-    			return mv;
+//    			ModelAndView mv = new ModelAndView("erro");
+    			return "erroLogin";
+    			
     		} else {
     			usuario.setUltimoLogin(new Date());
 //    			UsuarioDAOImpl.persistir(usuario);
     			sessao.setAttribute("usuario", usuario);
     			
-    			ModelAndView mv = new  ModelAndView("home");
-    			mv.addObject("usuario", usuario);
+//    			ModelAndView mv = new  ModelAndView("home");
+//    			mv.addObject("usuario", usuario);
     			
     			/**
     			 * Quando retornamos algo no formato redirect:/url estmaos
     			 * na realidade fazendo o redirecionamento para uma action lógica
     			 */
-    			return mv;
+    			return "reuniao/home";
     		} 
 
     }

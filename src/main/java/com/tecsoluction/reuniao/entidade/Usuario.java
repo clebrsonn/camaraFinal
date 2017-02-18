@@ -58,8 +58,8 @@ public class Usuario implements Serializable {
 	@Size(min=8, max=32, message="Login muito curto ou muito longo") 
 	@Column(name="login", nullable=false, unique=true, length=64)
 	private String login;
-	
-	private transient String senha;
+	@Column(name="senha")
+	private  String senha;
 	
 	@Column(name="ultimo_login", nullable=true) 
 	@Temporal(TemporalType.TIMESTAMP)
