@@ -5,17 +5,12 @@
 <!-- </div> -->
 	 <div class="main">
 		<div class="login-form">
-			<h1>Usuário</h1>
+			<h1>Erro</h1>
 					<div class="head">
 						<img src="resources/images/userlogin.png" alt=""/>
 					</div>
 				<form id="formlogin" action="home" method="post">
-						<input type="text" class="text" value="USERNAME" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'USERNAME';}" >
-						<input type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}">
-						<div class="submit">
-							<input type="submit" onclick="myFunction()" value="LOGIN" >
-							<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" >
-				
+						<h6>lalalalalalalalala</h6>
 					</div>	
 					<p><a href="#">Forgot Password ?</a></p>
 				</form>

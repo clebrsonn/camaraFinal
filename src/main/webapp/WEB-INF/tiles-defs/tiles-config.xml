@@ -25,6 +25,13 @@
         
 
     </definition>
+    
+<!--         <definition name="erro" extends="TemplateB"> -->
+<!--         <put-attribute name="login" value="/WEB-INF/views/erro.jsp"/> -->
+    
+        
+
+<!--     </definition> -->
 
     <definition name="home" extends="defaultTemplate">
         <put-attribute name="conteudo" value="/WEB-INF/views/home.jsp"/>

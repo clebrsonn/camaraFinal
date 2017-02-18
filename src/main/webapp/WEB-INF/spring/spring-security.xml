@@ -5,28 +5,32 @@
  						http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
 
 
-	<security:http auto-config="true">
-		<security:intercept-url pattern="/post/publicar/**"
-			access="ROLE_MEMBRO" />
+<security:global-method-security secured-annotations="enabled"/>
+
+<security:http auto-config="true" use-expressions="true">
+		<security:form-login 
+			authentication-failure-url="/reuniao/erro"
+			login-page="/reuniao/"
+			default-target-url="/reuniao/home">
+		<security:intercept-url pattern="/reuniao/home/movimentacao/**" access="hasRole('ROLE_MEMBRO')"/>
+			
 	</security:http>
+	
+	
+	<b:bean id="sfAuthenticationProvider" 
+		  autowire="byType"
+		  class="com.tecsoluction.reuniao.security.SFAuthenticationProvider"/>
+	
+	
 
 
-	<security:authentication-manager>
-
+		<security:authentication-manager>
+		<security:authentication-provider ref="sfAuthenticationProvider"/>
 		<security:authentication-provider>
-
 			<security:user-service>
-
-				<security:user name="bruce" password="lee"
-					authorities="ROLE_MEMBRO" />
-
-				<security:user name="admin" password="admin"
-					authorities="ROLE_MEMBRO,ROLE_ADMIN" />
-
+				<security:user name="jimmy" password="hendrix" authorities="ROLE_MEMBRO"/>
+				<security:user name="admin" password="admin" authorities="ROLE_MEMBRO,ROLE_ADMIN"/>
 			</security:user-service>
-
 		</security:authentication-provider>
-
 	</security:authentication-manager>
-
 </b:beans>

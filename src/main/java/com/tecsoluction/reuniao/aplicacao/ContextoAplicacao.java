@@ -29,8 +29,8 @@ public class ContextoAplicacao {
 
     @ModelAttribute
     public void addAttributes(Model model) {
-        Usuario usuarioAtt = usuarioDao.findOne(00002L);
-        model.addAttribute("usuarioAtt", usuarioAtt);
+//        Usuario usuarioAtt = usuarioDao.findOne(00002L);
+//        model.addAttribute("usuarioAtt", usuarioAtt);
     }
 
 }
