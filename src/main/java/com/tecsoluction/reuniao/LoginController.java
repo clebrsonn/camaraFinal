@@ -17,6 +17,7 @@ import java.text.DateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+import javax.annotation.security.RolesAllowed;
 import javax.servlet.http.HttpSession;
 
 /**
@@ -51,31 +52,64 @@ public class LoginController {
 
         return mv ;
     }
+    
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public String Autenticacao(@RequestParam("login") String login, @RequestParam("senha") String senha, HttpSession sessao) {
+    public ModelAndView Autenticacao(@RequestParam("login") String login, @RequestParam("senha") String senha, HttpSession sessao) {
     	
     		Usuario usuario = daoimpl.getUsuario(login, senha);
     		if (usuario != null) {
-    			
-//    			ModelAndView mv = new ModelAndView("erro");
-    			return "erroLogin";
+//    			erroLogin
+    			ModelAndView mv = new ModelAndView("erro");
+    			return mv;
     			
     		} else {
     			usuario.setUltimoLogin(new Date());
 //    			UsuarioDAOImpl.persistir(usuario);
     			sessao.setAttribute("usuario", usuario);
     			
-//    			ModelAndView mv = new  ModelAndView("home");
-//    			mv.addObject("usuario", usuario);
+    			ModelAndView mv = new  ModelAndView("home");
+    			mv.addObject("usuario", usuario);
     			
     			/**
     			 * Quando retornamos algo no formato redirect:/url estmaos
     			 * na realidade fazendo o redirecionamento para uma action lógica
     			 */
-    			return "reuniao/home";
+    			return mv;
     		} 
 
+    }
+    
+    @RequestMapping(value = "/erro", method = RequestMethod.GET)
+    public ModelAndView Erro(Locale locale, Model model) {
+        logger.info("Welcome home! The client locale is {}.", locale);
+
+        Date date = new Date();
+        DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
+
+        String formattedDate = dateFormat.format(date);
+
+        model.addAttribute("serverTime", formattedDate);
+        
+        ModelAndView mv = new ModelAndView("erro");
+
+        return mv ;
+    }
+ 
+    @RequestMapping(value = "/home", method = RequestMethod.GET)
+    public ModelAndView Home(Locale locale, Model model) {
+        logger.info("Welcome home! The client locale is {}.", locale);
+
+        Date date = new Date();
+        DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
+
+        String formattedDate = dateFormat.format(date);
+
+        model.addAttribute("serverTime", formattedDate);
+        
+        ModelAndView mv = new ModelAndView("home");
+
+        return mv ;
     }
 
 

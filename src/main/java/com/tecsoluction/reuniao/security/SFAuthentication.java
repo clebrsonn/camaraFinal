@@ -19,6 +19,9 @@ public class SFAuthentication implements Authentication {
 	private static final long serialVersionUID = -909654818303750963L;
 	private final Usuario usuario;
 	private boolean autenticado;
+	
+	
+	
 	public SFAuthentication(Usuario usuario, List<PermissaoUsuario> permissoes) {
 		this.usuario = usuario;
 		this.permissoes = permissoes;

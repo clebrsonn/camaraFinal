@@ -4,6 +4,8 @@
 			src="${pageContext.request.contextPath}/resources/images/user.png"/>
 			
 			<label>${usuarioAtt.nome}</label>
+			
+			 <a href="<c:url value="/j_spring_security_logout" />" > Logout</a></h2>
 		
 <!-- 		<img alt="menu_bar" id="menu_bar" align="right"  -->
 <%-- 			src="${pageContext.request.contextPath}/resources/images/menu.png"/>	 --%>
