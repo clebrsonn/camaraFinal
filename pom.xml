@@ -13,6 +13,7 @@
         <org.aspectj-version>1.8.9</org.aspectj-version>
         <org.slf4j-version>1.6.6</org.slf4j-version>
         <org.springsecurity-version>4.2.1.RELEASE</org.springsecurity-version>
+        <org.tiles-version>2.2.2</org.tiles-version>
     </properties>
     <dependencies>
         <!-- Spring -->
@@ -53,21 +54,21 @@
             <artifactId>hibernate-entitymanager</artifactId>
             <version>5.2.1.Final</version>
         </dependency>
-        
-        		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-validator</artifactId>
-			<version>4.2.0.Final</version>
-			<!-- Nem tudo é simples. O Hibernate Validator causa conflitos com a declaração 
-				do slf4j-log4j12 que declaramos logo abaixo. -->
-			<exclusions>
-				<exclusion>
-					<artifactId>slf4j-api</artifactId>
-					<groupId>org.slf4j</groupId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-		
+
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>4.2.0.Final</version>
+            <!-- Nem tudo é simples. O Hibernate Validator causa conflitos com a declaração
+                do slf4j-log4j12 que declaramos logo abaixo. -->
+            <exclusions>
+                <exclusion>
+                    <artifactId>slf4j-api</artifactId>
+                    <groupId>org.slf4j</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
@@ -174,27 +175,27 @@
         <dependency>
             <groupId>org.apache.tiles</groupId>
             <artifactId>tiles-extras</artifactId>
-            <version>2.2.2</version>
+            <version>${org.tiles-version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.tiles</groupId>
             <artifactId>tiles-jsp</artifactId>
-            <version>2.2.2</version>
+            <version>${org.tiles-version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.tiles</groupId>
             <artifactId>tiles-servlet</artifactId>
-            <version>2.2.2</version>
+            <version>${org.tiles-version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.tiles</groupId>
             <artifactId>tiles-template</artifactId>
-            <version>2.2.2</version>
+            <version>${org.tiles-version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.tiles</groupId>
             <artifactId>tiles-core</artifactId>
-            <version>2.2.2</version>
+            <version>${org.tiles-version}</version>
         </dependency>
 
         <!-- Test -->

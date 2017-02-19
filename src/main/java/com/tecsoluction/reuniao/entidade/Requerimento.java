@@ -49,61 +49,6 @@ public class Requerimento implements Serializable{
 ////
 //	    @Column(name = "PRIMEIROSECRETARIO")
 //	    private String primeirosecretario;
-
-	
-	
-
-
-
-
-	public Requerimento() {
-		// TODO Auto-generated constructor stub
-	}
-
-
-
-	public long getId() {
-		return id;
-	}
-
-
-
-
-	@Override
-	public String toString() {
-		return "Ata [data=" + data + "]";
-	}
-
-
-
-	public Date getData() {
-		return data;
-	}
-
-
-
-	public void setData(Date data) {
-		this.data = data;
-	}
-
-
-
-	public void setId(long id) {
-		this.id = id;
-	}
-	
-	
-	public Reuniao getReuniao() {
-		return reuniao;
-	}
-
-
-
-	public void setReuniao(Reuniao reuniao) {
-		this.reuniao = reuniao;
-	}
-	
-	
 	
 	
 

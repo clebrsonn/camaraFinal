@@ -13,11 +13,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 public class Vereador implements Serializable {
 
-    /**
-     *
-     */
     private static final long serialVersionUID = 1L;
-
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -32,7 +28,5 @@ public class Vereador implements Serializable {
 
     @Column(name = "EMAIL")
     private String email;
-//
-//	    @Column(name = "SENHA")
-//	    private String email;
+
 }
