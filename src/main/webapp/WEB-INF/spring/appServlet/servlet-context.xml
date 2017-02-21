@@ -4,7 +4,6 @@
        xmlns:mvc="http://www.springframework.org/schema/mvc"
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:tx="http://www.springframework.org/schema/tx" xmlns:jpa="http://www.springframework.org/schema/data/jpa"
-       xmlns:aop="http://www.springframework.org/schema/aop"
        xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
@@ -13,8 +12,8 @@
 
     <context:component-scan base-package="com.tecsoluction.reuniao"/>
 
-    <mvc:annotation-driven></mvc:annotation-driven>
-    <mvc:resources location="/resources/" mapping="/resources/**"  cache-period="120"/>
+    <mvc:annotation-driven/>
+    <mvc:resources location="/resources/" mapping="/resources/**" cache-period="120"/>
 
 
     <!-- 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"> -->
@@ -56,51 +55,40 @@
         </property>
 
     </bean>
-    
-    
-    
-    
-    	<bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
-		<property name="dataSource" ref="dataSource"/>
-		<property name="hibernateProperties">
-			<props>
-				<prop key="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</prop>
-				<prop key="hibernate.hbm2ddl.auto">update</prop>
-			</props>
-		</property>
-		
-		<property name="annotatedClasses">
-			<array>
-				<value>com.tecsoluction.reuniao.entidade.Usuario</value>
-				<value>com.tecsoluction.reuniao.entidade.PermissaoUsuario</value>
-<!-- 				<value>br.com.itexto.springforum.entidades.Assunto</value> -->
-<!-- 				<value>br.com.itexto.springforum.entidades.Topico</value> -->
-				
-			</array>
-		</property>
-		
-	</bean>
-    
-    
-    	<tx:advice transaction-manager="transactionManager" id="txAdvice">
-		<tx:attributes>
-			<tx:method name="*"/>
-		</tx:attributes>
-	</tx:advice>
-<!-- 	<aop:config> -->
-<!-- 		<aop:advisor advice-ref="txAdvice" /> -->
-<!-- 	</aop:config> -->
-	<bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
-		<property name="sessionFactory" ref="sessionFactory"/>
-		
-	</bean>
-    
-    
-    
-    
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</prop>
+                <prop key="hibernate.hbm2ddl.auto">update</prop>
+            </props>
+        </property>
+
+        <property name="annotatedClasses">
+            <array>
+                <value>com.tecsoluction.reuniao.entidade.Usuario</value>
+                <value>com.tecsoluction.reuniao.entidade.PermissaoUsuario</value>
+                <!-- 				<value>br.com.itexto.springforum.entidades.Assunto</value> -->
+                <!-- 				<value>br.com.itexto.springforum.entidades.Topico</value> -->
+
+            </array>
+        </property>
+
+    </bean>
+
+
+    <tx:advice transaction-manager="transactionManager" id="txAdvice">
+        <tx:attributes>
+            <tx:method name="*"/>
+        </tx:attributes>
+    </tx:advice>
+    <!-- 	<aop:config> -->
+    <!-- 		<aop:advisor advice-ref="txAdvice" /> -->
+    <!-- 	</aop:config> -->
+
 
     <!-- Transaction Manager -->
-    <bean class="org.springframework.orm.jpa.JpaTransactionManager" id="transactionManager2">
+    <bean class="org.springframework.orm.jpa.JpaTransactionManager" id="transactionManager">
         <property name="entityManagerFactory" ref="entityManagerFactory"/>
     </bean>
 
@@ -112,11 +100,7 @@
     </bean>
 
 
-
-
-        <jpa:repositories base-package="com.tecsoluction.reuniao.dao" />
-
-
+    <jpa:repositories base-package="com.tecsoluction.reuniao.dao"/>
 
 
 </beans>

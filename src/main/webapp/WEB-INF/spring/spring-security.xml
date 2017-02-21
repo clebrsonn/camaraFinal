@@ -1,48 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <b:beans xmlns:security="http://www.springframework.org/schema/security"
-	xmlns:b="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+         xmlns:b="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
  						http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
 
 
-<security:global-method-security secured-annotations="enabled"/>
-
-<security:http auto-config="true" use-expressions="true">
-		<security:form-login 
-			authentication-failure-url="/erro"
-			login-page="/"
-			default-target-url="/reuniao/home"/>
-			
-		<security:intercept-url pattern="/home**" access="hasRole('ROLE_MEMBRO')"/>
-		
-<!-- 		<security:intercept-url pattern="/**" access="isAnonymous()"/> -->
-		 
-	</security:http>
-	
-	
-	<b:bean id="sfAuthenticationProvider" 
-		  autowire="byType"
-		  class="com.tecsoluction.reuniao.security.SFAuthenticationProvider"/>
-	
-	
+    <security:global-method-security secured-annotations="enabled"/>
 
 
-	<security:authentication-manager>
+    <security:http auto-config="true" use-expressions="true">
+        <security:form-login
+                authentication-failure-url="/erro"
+                login-page="/"
+                default-target-url="/home"/>
+        <security:intercept-url pattern="/home**" access="hasRole('ROLE_MEMBRO')"/>
 
-		<security:authentication-provider>
+        <!-- 		<security:intercept-url pattern="/**" access="isAnonymous()"/> -->
 
-			<security:user-service>
+    </security:http>
 
-				<security:user name="bruce" password="lee"
-					authorities="ROLE_MEMBRO" />
 
-				<security:user name="admin" password="admin"
-					authorities="ROLE_MEMBRO,ROLE_ADMIN" />
+    <b:bean id="sfAuthenticationProvider"
+            autowire="byType"
+            class="com.tecsoluction.reuniao.security.SFAuthenticationProvider"/>
 
-			</security:user-service>
 
-		</security:authentication-provider>
+    <security:authentication-manager>
 
-	</security:authentication-manager>
+        <security:authentication-provider>
+            <security:password-encoder hash="sha-256"/>
+            <security:jdbc-user-service data-source-ref="dataSource"/>
+        </security:authentication-provider>
+
+        <security:authentication-provider>
+
+            <security:user-service>
+
+                <security:user name="bruce" password="lee"
+                               authorities="ROLE_MEMBRO"/>
+
+                <security:user name="admin" password="admin"
+                               authorities="ROLE_MEMBRO,ROLE_ADMIN"/>
+
+            </security:user-service>
+
+        </security:authentication-provider>
+
+    </security:authentication-manager>
 
 </b:beans>

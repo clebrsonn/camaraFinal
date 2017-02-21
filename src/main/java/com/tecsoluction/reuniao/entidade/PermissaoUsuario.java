@@ -17,11 +17,11 @@ import java.io.Serializable;
 public class PermissaoUsuario implements GrantedAuthority, Serializable {
 
     private static final long serialVersionUID = 1L;
+//
+//    @Column(name = "name", unique = true)
+//    protected String name;
 
     @Id
-    @Column(name = "name", unique = true)
-    protected String name;
-
     @Column(name = "role", nullable = false, length = 64)
     private String role;
 
