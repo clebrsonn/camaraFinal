@@ -6,10 +6,11 @@ import com.tecsoluction.reuniao.entidade.Usuario;
  * Created by clebr on 11/02/2017.
  */
 
-public interface UsuarioDAO  {
-	
+public interface UsuarioDao extends DaoGenerico<Usuario, Long> {
 
-	public Usuario getUsuario(String login);
 	
+	Usuario retornarUsuarioPorLogin(String username);
+	
+	Usuario retornaUsuarioPorLoginESenha(String username, String senha);
 
 }
