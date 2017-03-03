@@ -55,26 +55,25 @@
         </property>
 
     </bean>
-    <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
-        <property name="dataSource" ref="dataSource"/>
-        <property name="hibernateProperties">
-            <props>
-                <prop key="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</prop>
-                <prop key="hibernate.hbm2ddl.auto">update</prop>
-            </props>
-        </property>
+<!--     <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean"> -->
+<!--         <property name="dataSource" ref="dataSource"/> -->
+<!--         <property name="hibernateProperties"> -->
+<!--             <props> -->
+<!--                 <prop key="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</prop> -->
+<!--                 <prop key="hibernate.hbm2ddl.auto">update</prop> -->
+<!--             </props> -->
+<!--         </property> -->
 
-        <property name="annotatedClasses">
-            <array>
-                <value>com.tecsoluction.reuniao.entidade.Usuario</value>
-                <value>com.tecsoluction.reuniao.entidade.PermissaoUsuario</value>
-                <!-- 				<value>br.com.itexto.springforum.entidades.Assunto</value> -->
-                <!-- 				<value>br.com.itexto.springforum.entidades.Topico</value> -->
+<!--         <property name="annotatedClasses"> -->
+<!--             <array> -->
+<!--                 <value>com.tecsoluction.reuniao.entidade.Usuario</value> -->
+<!--                 <value>com.tecsoluction.reuniao.entidade.Role</value> -->
+                			
 
-            </array>
-        </property>
+<!--             </array> -->
+<!--         </property> -->
 
-    </bean>
+<!--     </bean> -->
 
 
     <tx:advice transaction-manager="transactionManager" id="txAdvice">
@@ -90,10 +89,48 @@
     <!-- Transaction Manager -->
     <bean class="org.springframework.orm.jpa.JpaTransactionManager" id="transactionManager">
         <property name="entityManagerFactory" ref="entityManagerFactory"/>
+        
+        
     </bean>
 
     <!-- Enable @Transactional annotation -->
     <tx:annotation-driven/>
+    
+      <bean id="usuarioDao"
+		class="com.tecsoluction.reuniao.dao.impl.UsuarioDaoImpl"
+		>
+  
+  	</bean>
+  	
+  	      <bean id="usuarioServico"
+		class="com.tecsoluction.reuniao.servicos.impl.UsuarioServicoImpl"
+		>
+  
+  	</bean>
+  	
+  	
+  	
+  	    <bean id="roleDao"
+		class="com.tecsoluction.reuniao.dao.impl.RoleDaoImpl"
+		>
+  
+  </bean>
+  
+    <bean id="roleService"
+		class="com.tecsoluction.reuniao.servicos.impl.RoleServicoImpl"
+		>
+  
+  </bean>
+  	
+  	
+  	
+  	    <bean id="userDetailService"
+		class="com.tecsoluction.reuniao.security.impl.UserDetailServiceImpl"
+		>
+  
+  </bean>
+  	
+  	
 
     <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
         <property name="basename" value="META-INF.messages"/>

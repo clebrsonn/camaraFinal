@@ -8,9 +8,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.tecsoluction.reuniao.dao.AtaDAO;
-import com.tecsoluction.reuniao.dao.RequerimentoDAO;
-import com.tecsoluction.reuniao.dao.ReuniaoDAO;
+import com.tecsoluction.reuniao.dao.AtaDao;
+import com.tecsoluction.reuniao.dao.RequerimentoDao;
+import com.tecsoluction.reuniao.dao.ReuniaoDao;
 import com.tecsoluction.reuniao.entidade.Ata;
 import com.tecsoluction.reuniao.entidade.Requerimento;
 import com.tecsoluction.reuniao.entidade.Reuniao;
@@ -22,29 +22,29 @@ import com.tecsoluction.reuniao.framework.AbstractController;
  */
 @Controller
 @RequestMapping(value = "requerimento")
-public class RequerimentoController extends AbstractController<Requerimento> {
+public class RequerimentoController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(RequerimentoController.class);
 	
 	
-	private final RequerimentoDAO dao;
-	
-	
-	
-	@Autowired
-	public RequerimentoController(RequerimentoDAO dao) {
-		super("requerimento");
-		this.dao = dao;
-	
-	}
-
-
-
-	@Override
-	protected JpaRepository<Requerimento, Long> getDao() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+//	private final RequerimentoDAO dao;
+//	
+//	
+//	
+//	@Autowired
+//	public RequerimentoController(RequerimentoDAO dao) {
+//		super("requerimento");
+//		this.dao = dao;
+//	
+//	}
+//
+//
+//
+//	@Override
+//	protected JpaRepository<Requerimento, Long> getDao() {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
 
 	
 	

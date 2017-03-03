@@ -1,7 +1,7 @@
 package com.tecsoluction.reuniao;
 
-import com.tecsoluction.reuniao.dao.UsuarioDAO;
-import com.tecsoluction.reuniao.dao.UsuarioDAOImpl;
+import com.tecsoluction.reuniao.dao.UsuarioDao;
+import com.tecsoluction.reuniao.dao.UsuarioDao;
 import com.tecsoluction.reuniao.entidade.Usuario;
 import com.tecsoluction.reuniao.framework.AbstractController;
 import org.slf4j.Logger;
@@ -22,7 +22,7 @@ public class UsuarioController{
 
 
    
-    private UsuarioDAOImpl daoimpl;
+//    private UsuarioDAOImpl daoimpl;
 
 
 

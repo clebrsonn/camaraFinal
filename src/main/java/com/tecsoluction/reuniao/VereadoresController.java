@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 import com.tecsoluction.reuniao.framework.AbstractController;
 import com.tecsoluction.reuniao.framework.AbstractEntityDao;
-import com.tecsoluction.reuniao.dao.VereadorDAO;
+import com.tecsoluction.reuniao.dao.VereadorDao;
 import com.tecsoluction.reuniao.entidade.Usuario;
 import com.tecsoluction.reuniao.entidade.Vereador;
 
@@ -23,30 +23,30 @@ import com.tecsoluction.reuniao.entidade.Vereador;
  */
 @Controller
 @RequestMapping(value = "vereador")
-public class VereadoresController extends AbstractController<Vereador> {
+public class VereadoresController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(VereadoresController.class);
 	
 	
-	private final  VereadorDAO dao;
+//	private final  VereadorDAO dao;
 	
 
-	 @Autowired
-	public VereadoresController(VereadorDAO dao) {
-		  
-		  super("vereador");
-		  this.dao =dao;
-		
-		
-		// TODO Auto-generated constructor stub
-	}
+//	 @Autowired
+//	public VereadoresController(VereadorDAO dao) {
+//		  
+//		  super("vereador");
+//		  this.dao =dao;
+//		
+//		
+//		// TODO Auto-generated constructor stub
+//	}
 
 
-	@Override
-	protected VereadorDAO getDao() {
-		// TODO Auto-generated method stub
-		return dao;
-	}
+//	@Override
+//	protected VereadorDAO getDao() {
+//		// TODO Auto-generated method stub
+//		return dao;
+//	}
 	
 
 	

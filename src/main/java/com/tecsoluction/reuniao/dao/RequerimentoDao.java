@@ -6,8 +6,7 @@ import org.springframework.stereotype.Repository;
 
 
 
-@Repository
-public interface RequerimentoDAO extends JpaRepository<Requerimento, Long>{
+public interface RequerimentoDao extends DaoGenerico<Requerimento, Long>{
 
 	
 

@@ -1,7 +1,7 @@
 package com.tecsoluction.reuniao;
 
 
-import com.tecsoluction.reuniao.dao.ReuniaoDAO;
+import com.tecsoluction.reuniao.dao.ReuniaoDao;
 import com.tecsoluction.reuniao.entidade.Reuniao;
 import com.tecsoluction.reuniao.framework.AbstractController;
 import org.slf4j.Logger;
@@ -16,26 +16,26 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 @RequestMapping(value = "reuniao")
-public class ReuniaoController extends AbstractController<Reuniao> {
+public class ReuniaoController  {
 
     private static final Logger logger = LoggerFactory.getLogger(ReuniaoController.class);
 
 
-    @Autowired private ReuniaoDAO dao;
-
-
-
-    public ReuniaoController(ReuniaoDAO dao) {
-        super("reuniao");
-        this.dao = dao;
-
-    }
-
-    @Override
-    protected ReuniaoDAO getDao() {
-        // TODO Auto-generated method stub
-        return dao;
-    }
+//    @Autowired private ReuniaoDAO dao;
+//
+//
+//
+//    public ReuniaoController(ReuniaoDAO dao) {
+//        super("reuniao");
+//        this.dao = dao;
+//
+//    }
+//
+//    @Override
+//    protected ReuniaoDAO getDao() {
+//        // TODO Auto-generated method stub
+//        return dao;
+//    }
 
 
 }

@@ -8,9 +8,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.tecsoluction.reuniao.dao.AtaDAO;
-import com.tecsoluction.reuniao.dao.MocaoDAO;
-import com.tecsoluction.reuniao.dao.ReuniaoDAO;
+import com.tecsoluction.reuniao.dao.AtaDao;
+import com.tecsoluction.reuniao.dao.MocaoDao;
+import com.tecsoluction.reuniao.dao.ReuniaoDao;
 import com.tecsoluction.reuniao.entidade.Ata;
 import com.tecsoluction.reuniao.entidade.Mocao;
 import com.tecsoluction.reuniao.entidade.Reuniao;
@@ -22,29 +22,29 @@ import com.tecsoluction.reuniao.framework.AbstractController;
  */
 @Controller
 @RequestMapping(value = "mocao")
-public class MocaoController extends AbstractController<Mocao> {
+public class MocaoController  {
 	
 	private static final Logger logger = LoggerFactory.getLogger(MocaoController.class);
 	
 	
-	private final MocaoDAO dao;
-	
-	
-	
-	@Autowired
-	public MocaoController(MocaoDAO dao) {
-		super("mocao");
-		this.dao = dao;
-	
-	}
-
-
-
-	@Override
-	protected JpaRepository<Mocao, Long> getDao() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+//	private final MocaoDAO dao;
+//	
+//	
+//	
+//	@Autowired
+//	public MocaoController(MocaoDAO dao) {
+//		super("mocao");
+//		this.dao = dao;
+//	
+//	}
+//
+//
+//
+//	@Override
+//	protected JpaRepository<Mocao, Long> getDao() {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
 
 //	@Override
 //	protected MocaoDAO getDao() {

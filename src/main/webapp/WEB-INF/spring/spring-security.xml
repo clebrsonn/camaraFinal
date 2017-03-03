@@ -4,40 +4,52 @@
          xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
  						http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
 
-
-    <security:global-method-security secured-annotations="enabled"/>
+<security:global-method-security pre-post-annotations="enabled" secured-annotations="enabled" />
 
 
     <security:http auto-config="true" use-expressions="true">
         <security:form-login
-                authentication-failure-url="/erro"
-                login-page="/"
-                default-target-url="/home"/>
+         		login-page="/"
+         		default-target-url="/home"
+                authentication-failure-url="/erro"              
+                username-parameter="username" 
+        		password-parameter="senha"/>
+        			
+<!--     	 <security:logout logout-success-url="/" /> -->
+        			   
         <security:intercept-url pattern="/home**" access="hasRole('ROLE_MEMBRO')"/>
 
-        <!-- 		<security:intercept-url pattern="/**" access="isAnonymous()"/> -->
+<!--         		<security:intercept-url pattern="/**" access="isAnonymous()"/> -->
 
     </security:http>
+    
+       <b:bean class="org.springframework.jdbc.datasource.DriverManagerDataSource" id="dataSource">
+        <b:property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <b:property name="url" value="jdbc:mysql://localhost:3306/reuniao"/>
+        <b:property name="username" value="root"/>
+        <b:property name="password" value="123456"/>
+        
+        </b:bean>
 
 
-    <b:bean id="sfAuthenticationProvider"
-            autowire="byType"
-            class="com.tecsoluction.reuniao.security.SFAuthenticationProvider"/>
+<!--     <b:bean id="sfAuthenticationProvider" -->
+<!--             autowire="byType" -->
+<!--             class="com.tecsoluction.reuniao.security.SFAuthenticationProvider"/> -->
+
+ <b:bean id="myAuthenticationProvider" class="com.tecsoluction.reuniao.security.MyAuthenticationProvider"></b:bean>
 
 
     <security:authentication-manager>
 
         <security:authentication-provider>
 
-            <security:user-service>
+            <security:jdbc-user-service data-source-ref="dataSource"
+        
+        users-by-username-query="SELECT username, senha ,'true' as enable FROM usuario WHERE username=?"
 
-                <security:user name="bruce" password="lee"
-                               authorities="ROLE_MEMBRO"/>
-
-                <security:user name="admin" password="admin"
-                               authorities="ROLE_MEMBRO,ROLE_ADMIN"/>
-
-            </security:user-service>
+		authorities-by-username-query="SELECT usuario.username, role.name as authorities
+  										FROM usuario, usuario_role ,role 
+   										WHERE usuario.username = ? AND usuario.id = usuario_role.idusuario AND role.id=usuario_role.idusuario"/>
 
         </security:authentication-provider>
 

@@ -13,6 +13,7 @@
 						<h6>lalalalalalalalala</h6>
 					</div>	
 					<p><a href="#">Forgot Password ?</a></p>
+					       <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
 				</form>
 			</div>
 			<!--//End-login-form-->

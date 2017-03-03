@@ -14,7 +14,11 @@
 <%--             <h1>Seja Bem-Vindo ${Usuario.nome}</h1> --%>
 <%--             <h2>Ultimo Acesso em ${Usuario.email}</h2> --%>
 
-<!--         </div> -->
+<!--     
+    </div> -->
+    
+    
+           <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
 
     </div>
 
