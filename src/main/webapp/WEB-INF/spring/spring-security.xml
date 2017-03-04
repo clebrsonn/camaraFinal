@@ -14,6 +14,8 @@
                 authentication-failure-url="/erro"              
                 username-parameter="username" 
         		password-parameter="senha"/>
+        		
+<!--         		<security:custom-filter position="LAST" ref="usernamePasswordAuthenticationFilter"/> -->
         			
 <!--     	 <security:logout logout-success-url="/" /> -->
          <security:intercept-url pattern="/resources/**" access="permitAll" />  
@@ -32,14 +34,31 @@
         </b:bean>
 
 
-<!--     <b:bean id="sfAuthenticationProvider" -->
-<!--             autowire="byType" -->
-<!--             class="com.tecsoluction.reuniao.security.SFAuthenticationProvider"/> -->
+    <b:bean id="usernamePasswordAuthenticationFilter"
+            
+            class="com.tecsoluction.reuniao.security.UsernamePasswordAuthenticationFilter">
+             <b:property name="authenticationManager" ref="authenticationManager" />
+			 <b:property name="authenticationFailureHandler" ref="failureHandler" />
+			 <b:property name="authenticationSuccessHandler" ref="successHandler" />
+           
+            </b:bean>
+            
+            
+            
+            <b:bean id="successHandler" class="org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler">
+ <b:property name="defaultTargetUrl" value="/home" />
+</b:bean>
+<b:bean id="failureHandler" class="org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler" >
+ <b:property name="defaultFailureUrl" value="/erro"/>
+</b:bean>
+            
+            
+            
 
 <!--  <b:bean id="myAuthenticationProvider" class="com.tecsoluction.reuniao.security.MyAuthenticationProvider"></b:bean> -->
 
 
-    <security:authentication-manager>
+    <security:authentication-manager alias="authenticationManager">
 
         <security:authentication-provider >
 

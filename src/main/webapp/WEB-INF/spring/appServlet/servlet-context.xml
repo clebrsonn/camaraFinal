@@ -106,18 +106,30 @@
         
         
     </bean>
+    
+    
+    
+      <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+        <property name="basename" value="META-INF.messages"/>
+  
+  </bean>
+    
+    
+    
 
     <!-- Enable @Transactional annotation -->
     <tx:annotation-driven/>
     
       <bean id="usuarioDao"
 		class="com.tecsoluction.reuniao.dao.impl.UsuarioDaoImpl"
+		scope="request"
 		>
   
   	</bean>
   	
   	      <bean id="usuarioServico"
 		class="com.tecsoluction.reuniao.servicos.impl.UsuarioServicoImpl"
+		scope="request"
 		>
   
   	</bean>
@@ -126,12 +138,14 @@
   	
   	    <bean id="roleDao"
 		class="com.tecsoluction.reuniao.dao.impl.RoleDaoImpl"
+		scope="request"
 		>
   
   </bean>
   
     <bean id="roleService"
 		class="com.tecsoluction.reuniao.servicos.impl.RoleServicoImpl"
+		scope="request"
 		>
   
   </bean>
@@ -144,11 +158,7 @@
   
   </bean>
   	
-  	
-
-    <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
-        <property name="basename" value="META-INF.messages"/>
-    </bean>
+  
 
 
     <jpa:repositories base-package="com.tecsoluction.reuniao.dao"/>

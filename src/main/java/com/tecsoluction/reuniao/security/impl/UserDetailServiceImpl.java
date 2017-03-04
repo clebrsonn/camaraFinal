@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -19,8 +20,8 @@ import com.tecsoluction.reuniao.entidade.Usuario;
 
 @Service
 @Transactional(propagation = Propagation.NOT_SUPPORTED)
+//@Scope("request")
 public class UserDetailServiceImpl implements UserDetailsService {
-
 
 	 private UsuarioDaoImpl usuarioDao;
 	
@@ -29,9 +30,9 @@ public class UserDetailServiceImpl implements UserDetailsService {
 
 		
 		 Usuario usuario = new Usuario();
-	        usuario.setUsername(username);
+	        usuario.setUserName(username);
 	        try {
-	            usuario = usuarioDao.retornarUsuarioPorLogin(usuario.getUsername());
+	            usuario = usuarioDao.retornarUsuarioPorLogin(usuario.getUserName());
 	            if (usuario == null){
 	                return null;
 	            }
@@ -44,7 +45,7 @@ public class UserDetailServiceImpl implements UserDetailsService {
 
 	public UserDetails loadUserByUsernameAndPassword(String username, String senha) throws UsernameNotFoundException  {
         Usuario usuario = new Usuario();
-        usuario.setUsername(username);
+        usuario.setUserName(username);
         usuario.setSenha(senha);
        
         try {
@@ -64,9 +65,9 @@ public class UserDetailServiceImpl implements UserDetailsService {
 
         try {
             // convert model user to spring security user
-            String username = usuario.getUsername();
+            String login = usuario.getUserName();
             String senha = usuario.getSenha();
-            boolean enabled = usuario.isAtivo();
+            boolean enabled = usuario.getIsAtivo();
             boolean accountNonExpired = true;
             boolean credentialsNonExpired = true;
             boolean accountNonLocked = true;
@@ -74,7 +75,7 @@ public class UserDetailServiceImpl implements UserDetailsService {
             Collection<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
             authorities.add((GrantedAuthority) usuario.getRoles());
 
-            springUser = new User(username, senha, enabled,
+            springUser = new User(login, senha, enabled,
                     accountNonExpired, credentialsNonExpired, accountNonLocked,
                     authorities);
         } catch (Exception e) {
