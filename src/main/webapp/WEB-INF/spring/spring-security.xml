@@ -16,14 +16,14 @@
         		password-parameter="senha"/>
         			
 <!--     	 <security:logout logout-success-url="/" /> -->
-        			   
+         <security:intercept-url pattern="/resources/**" access="permitAll" />  
         <security:intercept-url pattern="/home**" access="hasRole('ROLE_MEMBRO')"/>
-
+<security:logout logout-success-url="/"/>
 <!--         		<security:intercept-url pattern="/**" access="isAnonymous()"/> -->
 
     </security:http>
     
-       <b:bean class="org.springframework.jdbc.datasource.DriverManagerDataSource" id="dataSource">
+       <b:bean class="org.springframework.jdbc.datasource.DriverManagerDataSource" id="dataSourcee">
         <b:property name="driverClassName" value="com.mysql.jdbc.Driver"/>
         <b:property name="url" value="jdbc:mysql://localhost:3306/reuniao"/>
         <b:property name="username" value="root"/>
@@ -36,19 +36,19 @@
 <!--             autowire="byType" -->
 <!--             class="com.tecsoluction.reuniao.security.SFAuthenticationProvider"/> -->
 
- <b:bean id="myAuthenticationProvider" class="com.tecsoluction.reuniao.security.MyAuthenticationProvider"></b:bean>
+<!--  <b:bean id="myAuthenticationProvider" class="com.tecsoluction.reuniao.security.MyAuthenticationProvider"></b:bean> -->
 
 
     <security:authentication-manager>
 
-        <security:authentication-provider>
+        <security:authentication-provider >
 
-            <security:jdbc-user-service data-source-ref="dataSource"
+            <security:jdbc-user-service data-source-ref="dataSourcee"
         
         users-by-username-query="SELECT username, senha ,'true' as enable FROM usuario WHERE username=?"
 
 		authorities-by-username-query="SELECT usuario.username, role.name as authorities
-  										FROM usuario, usuario_role ,role 
+  										FROM usuario, usuario_role ,role
    										WHERE usuario.username = ? AND usuario.id = usuario_role.idusuario AND role.id=usuario_role.idusuario"/>
 
         </security:authentication-provider>

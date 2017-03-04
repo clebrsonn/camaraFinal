@@ -47,14 +47,28 @@
     </bean>
 
     <!-- EntityManagerFactory -->
-    <bean class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean" id="entityManagerFactory">
+<!--     <bean class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean" id="entityManagerFactory"> -->
+<!--         <property name="persistenceUnitName" value="PU-REUNIAO"/> -->
+<!--         <property name="dataSource" ref="dataSource"/> -->
+<!--         <property name="jpaVendorAdapter"> -->
+<!--             <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"/> -->
+<!--         </property> -->
+
+<!--     </bean> -->
+
+
+   <bean class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean" id="entityManagerFactory">
         <property name="persistenceUnitName" value="PU-REUNIAO"/>
         <property name="dataSource" ref="dataSource"/>
         <property name="jpaVendorAdapter">
             <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"/>
         </property>
+   </bean>
 
-    </bean>
+
+
+
+
 <!--     <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean"> -->
 <!--         <property name="dataSource" ref="dataSource"/> -->
 <!--         <property name="hibernateProperties"> -->

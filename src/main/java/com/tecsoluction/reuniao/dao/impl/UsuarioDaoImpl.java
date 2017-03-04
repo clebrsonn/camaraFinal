@@ -26,7 +26,7 @@ public class UsuarioDaoImpl extends DaoGenericoImpl<Usuario, Long> implements Us
 
 	@Override
 	public Usuario retornaUsuarioPorLoginESenha(String username, String senha) {
-		String queryS = "SELECT obj FROM USUARIO WHERE USERNAME="+username+ "AND SENHA="+senha+" obj";
+		String queryS = "SELECT obj FROM USUARIO WHERE USERNAME='"+username+ "'AND SENHA='"+senha+"'obj";
 		Query query = getEntityManager().createQuery(queryS);
 		Usuario user2 = new Usuario();
 		user2 = (Usuario) query.getSingleResult() ;

@@ -2,6 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <%@page pageEncoding="UTF-8" %>
 <%@taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
+<%@page session="true"%>
 
 <!-- </div> -->
 <div class="main">
@@ -11,7 +12,7 @@
             <img src="resources/images/userlogin.png" alt=""/>
         </div>
         <form id="formlogin" action="login" method="post">
-            <input type="text" id="login" name="username" class="text" value="">
+            <input type="text" id="username" name="username" class="text" value="">
             <input type="password" id="senha" name="senha" value="">
             <div class="submit">
                 <input type="submit" value="login">
