@@ -9,7 +9,7 @@ import java.util.Date;
 
 
 @Entity
-@Table(name = "ATA")
+@Table(name = "ORADORESDIA")
 @Data
 @NoArgsConstructor
 public class OradoresDia implements Serializable {
@@ -32,18 +32,45 @@ public class OradoresDia implements Serializable {
 
     @OneToOne
     private Reuniao reuniao;
-//
-//
-//	    @Column(name = "LOCAL")
-//	    private String local;
-//	    
-//	    @Column(name = "HORA")
-//	    private String hora;
-//
-//	    @Column(name = "PRESIDENTE")
-//	    private String presidente;
-////
-//	    @Column(name = "PRIMEIROSECRETARIO")
-//	    private String primeirosecretario;
+    
+    
+    private boolean isAtivo;
+
+
+    public long getId() {
+        return this.id;
+    }
+
+	public void setId(long numero) {
+        this.id = numero;
+    }
+
+
+	public Date getData() {
+        return data;
+    }
+
+	public void setData(Date datacriacao) {
+        this.data = datacriacao;
+    }
+	
+	public boolean getIsAtivo(){
+		
+		return isAtivo;
+	}
+	
+	public void setIsAtivo(boolean valor){
+		
+		this.isAtivo=valor;
+	}
+	
+
+	public Reuniao getReuniao() {
+        return this.reuniao;
+    }
+
+	public void setReuniao(Reuniao reuniao) {
+        this.reuniao = reuniao;
+    }
 
 }

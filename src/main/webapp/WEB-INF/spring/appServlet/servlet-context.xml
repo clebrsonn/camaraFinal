@@ -127,7 +127,7 @@
   
   	</bean>
   	
-  	      <bean id="usuarioServico"
+	<bean id="usuarioServico"
 		class="com.tecsoluction.reuniao.servicos.impl.UsuarioServicoImpl"
 		scope="request"
 		>
@@ -136,7 +136,7 @@
   	
   	
   	
-  	    <bean id="roleDao"
+  <bean id="roleDao"
 		class="com.tecsoluction.reuniao.dao.impl.RoleDaoImpl"
 		scope="request"
 		>
@@ -152,13 +152,126 @@
   	
   	
   	
-  	    <bean id="userDetailService"
+  <bean id="userDetailService"
 		class="com.tecsoluction.reuniao.security.impl.UserDetailServiceImpl"
 		>
   
   </bean>
   	
+	<bean id="vereadorDao"
+		class="com.tecsoluction.reuniao.dao.impl.VereadorDaoImpl"
+		scope="request"
+		>
   
+  </bean>
+  
+    <bean id="vereadorService"
+		class="com.tecsoluction.reuniao.servicos.impl.VereadorServicoImpl"
+		scope="request"
+		>
+  
+  </bean>
+  
+  	
+ 	<bean id="projetoleiDao"
+		class="com.tecsoluction.reuniao.dao.impl.ProjetoLeiDaoImpl"
+		scope="request"
+		>
+  
+  </bean>
+  
+    <bean id="projetoleiService"
+		class="com.tecsoluction.reuniao.servicos.impl.ProjetoLeiServicoImpl"
+		scope="request"
+		>
+  
+  </bean>
+  
+   	<bean id="requerimentoDao"
+		class="com.tecsoluction.reuniao.dao.impl.RequerimentoDaoImpl"
+		scope="request"
+		>
+  
+  </bean>
+  
+    <bean id="requerimentoService"
+		class="com.tecsoluction.reuniao.servicos.impl.RequerimentoServicoImpl"
+		scope="request"
+		>
+  
+  </bean>
+  
+     	<bean id="mocaoDao"
+		class="com.tecsoluction.reuniao.dao.impl.MocaoDaoImpl"
+		scope="request"
+		>
+  
+  </bean>
+  
+    <bean id="mocaoService"
+		class="com.tecsoluction.reuniao.servicos.impl.MocaoServicoImpl"
+		scope="request"
+		>
+  
+  </bean>
+  
+  
+       	<bean id="expedienteDao"
+		class="com.tecsoluction.reuniao.dao.impl.ExpedienteDaoImpl"
+		scope="request"
+		>
+  
+  </bean>
+  
+    <bean id="expedienteService"
+		class="com.tecsoluction.reuniao.servicos.impl.ExpedienteServicoImpl"
+		scope="request"
+		>
+  
+  </bean>
+  
+  
+  <bean id="reuniaoDao"
+		class="com.tecsoluction.reuniao.dao.impl.ReuniaoDaoImpl"
+		scope="request"
+		>
+  
+  </bean>
+  
+    <bean id="reuniaoService"
+		class="com.tecsoluction.reuniao.servicos.impl.ReuniaoServicoImpl"
+		scope="request"
+		>
+  
+  </bean>
+  
+    <bean id="ordemdiaDao"
+		class="com.tecsoluction.reuniao.dao.impl.OrdemDiaDaoImpl"
+		scope="request"
+		>
+  
+  </bean>
+  
+    <bean id="ordemdiaService"
+		class="com.tecsoluction.reuniao.servicos.impl.OrdemDiaServicoImpl"
+		scope="request"
+		>
+  
+  </bean>
+  
+      <bean id="oradoresdiaDao"
+		class="com.tecsoluction.reuniao.dao.impl.OradorDiaDaoImpl"
+		scope="request"
+		>
+  
+  </bean>
+  
+    <bean id="oradoresdiaService"
+		class="com.tecsoluction.reuniao.servicos.impl.OradoresDiaServicoImpl"
+		scope="request"
+		>
+  
+  </bean>
 
 
     <jpa:repositories base-package="com.tecsoluction.reuniao.dao"/>

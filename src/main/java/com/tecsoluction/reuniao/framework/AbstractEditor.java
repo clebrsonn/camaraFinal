@@ -2,14 +2,16 @@ package com.tecsoluction.reuniao.framework;
 
 import java.beans.PropertyEditorSupport;
 
+import com.tecsoluction.reuniao.dao.DaoGenerico;
+
 /**
  * Created by clebr on 17/07/2016.
  */
 public class AbstractEditor<Entity> extends PropertyEditorSupport {
 
-    private final AbstractEntityDao<Entity> dao;
+    private final DaoGenerico<Entity,Long> dao;
 
-    public AbstractEditor(final AbstractEntityDao<Entity> dao) {
+    public AbstractEditor(final DaoGenerico<Entity,Long> dao) {
         this.dao = dao;
     }
 
@@ -19,7 +21,7 @@ public class AbstractEditor<Entity> extends PropertyEditorSupport {
         if (id.equalsIgnoreCase("")) {
             this.setValue(null);
         } else {
-            final Entity entity = dao.PegarPorId(Long.parseLong(id));
+            final Entity entity = dao.pesquisarPorId(Long.parseLong(id));
 
             this.setValue(entity);
         }

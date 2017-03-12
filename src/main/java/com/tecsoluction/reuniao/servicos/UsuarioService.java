@@ -5,6 +5,9 @@ import com.tecsoluction.reuniao.entidade.Usuario;
 public interface UsuarioService {
 	
 	public Usuario buscaPorLoginESenha(String login, String senha);
+	
+	
+	public Usuario buscaPorUserName(String username);
 
 
 }

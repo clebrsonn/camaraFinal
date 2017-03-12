@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.tecsoluction.reuniao.framework.AbstractEntityDao;
+
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
@@ -20,7 +22,7 @@ public abstract class AbstractController<Entity> {
         this.entityAlias = entityAlias;
     }
 
-    protected abstract JpaRepository<Entity, Long> getDao();
+    protected abstract AbstractEntityDao<Entity> getDao();
 
     @RequestMapping(value = "cadastro", method = RequestMethod.GET)
     public ModelAndView cadastrarEntity() {
@@ -43,7 +45,7 @@ public abstract class AbstractController<Entity> {
 
 //        ModelAndView cadastroEntity = new ModelAndView("cadastro" + entityAlias);
 
-        getDao().save(entity);
+        getDao().add(entity);
 //        getDao().PegarPorId(entity);
 
 //        cadastroEntity.addObject("entity", entity);
@@ -63,7 +65,7 @@ public abstract class AbstractController<Entity> {
 
         ModelAndView movimentacao = new ModelAndView("movimentacao" + entityAlias);
 
-        List<Entity> entityList = getDao().findAll();
+        List<Entity> entityList = getDao().getAll();
 
         movimentacao.addObject(entityAlias + "List", entityList);
 
@@ -77,7 +79,7 @@ public abstract class AbstractController<Entity> {
         Entity entity;
         long idf = Long.parseLong(request.getParameter("id"));
         ModelAndView edicao = new ModelAndView("edicao" + entityAlias);
-        entity = getDao().findOne(idf);
+        entity = getDao().PegarPorId(idf);
         edicao.addObject(entityAlias, entity);
         edicao.addObject("acao", "edicao");
 
@@ -91,7 +93,7 @@ public abstract class AbstractController<Entity> {
 
 
         Long idf = Long.parseLong(request.getParameter("id"));
-        getDao().save(entity);
+        getDao().add(entity);
 
 
         return new ModelAndView("redirect:/" + entityAlias + "/" + "movimentacao");

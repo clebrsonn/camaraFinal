@@ -9,17 +9,17 @@
     	<tr class="titleTr">
 				    <td class="titleTd">Projetos de Lei</td>
 				       <td class="search"> <input type="text"></td>
-				    <td colspan="1"></td>
+				    <td colspan="4"></td>
 				    <td><a href="#cadastro" rel="modal" ><img src="${pageContext.request.contextPath}/resources/images/add.png"></div></a></td>
   				</tr>
   				
   				 <tr class="headingTr">
   				    <td>Id</td>
 				    <td>Data</td>
-				    <td>Reuniao</td>
-<!-- 				    <td>Email</td> -->
-<!-- 				    <td>Hora</td> -->
-<!-- 				     <td>Presidente</td> -->
+				    <td>Numero</td>
+				    <td>Descricao</td>
+				    <td>Autor</td>
+				     <td>IsAtivo</td>
 <!-- 				    <td>Primeiro Secretário</td> -->
 <!-- 				    <td>Status</td> -->
 				    <td>Ação</td>
@@ -28,35 +28,38 @@
   				 
   				 
       
-  <c:forEach var="ata" items="${ataList}" varStatus="id">
+  <c:forEach var="projetolei" items="${projetoleiList}" varStatus="id">
 
 		<c:choose>
-		  <c:when test="${ata.id % 2 == 0}">
+		  <c:when test="${projetolei.id % 2 == 0}">
 		    <tr class="trow">
-			     <td>${ata.id}</td>
-		                     <td><input type="date" value="${ata.data}"></td>
-				    <td>${ata.reuniao}</td>
-<%-- 		                     <td>${vereador.email}</td> --%>
-<%-- 		                    <td>${vereador.hora}</td> --%>
-<%-- 		                      <td>${vereador.presidente}</td> --%>
+			     <td>${projetolei.id}</td>
+		                     <td><input type="date" value="${projetolei.data}"></td>
+				    <td>${projetolei.numero}</td>
+		                     <td>${projetolei.descricao}</td>
+		                    <td>${projetolei.autor}</td>
+		                      <td>${projetolei.isAtivo}</td>
 <%-- 		                     	<td>${vereador.primeirosecretario}</td> --%>
 			     <td class="options-width">
 			        
 			     
-                        <a href="edicao?id=${ata.id}" title="Edit"><img src="${pageContext.request.contextPath}/resources/images/visualizar.png" alt="X"/></a>
-                        <a href="/delete?id=${ata.id}"  title="aaa"><img src="${pageContext.request.contextPath}/resources/images/editar.png" alt="placeholder icon" /></a>
-                         <a href="/edit?id=${ata.id}" title="bbb"><img src="${pageContext.request.contextPath}/resources/images/excluir.png" alt="placeholder icon" /></a>
+                       <a href="${pageContext.request.contextPath}/projetolei/visualizacao?id=${projetolei.id}" title="Edit"><img src="${pageContext.request.contextPath}/resources/images/visualizar.png" alt="X"/></a>
+                        <a href="${pageContext.request.contextPath}/projetolei/editar?id=${projetolei.id}"  title="aaa"><img src="${pageContext.request.contextPath}/resources/images/editar.png" alt="placeholder icon" /></a>
+                         <a href="${pageContext.request.contextPath}/projetolei/delete?id=${projetolei.id}" title="bbb"><img src="${pageContext.request.contextPath}/resources/images/excluir.png" alt="placeholder icon" /></a>
                                                
                         
                     </td>
 			  </tr>
 		    
 		  </c:when>
-		  <c:when test="${ata.id % 2 != 0}">
+		  <c:when test="${projetolei.id % 2 != 0}">
 		           <tr class="trow">
-			     <td>${ata.id}</td>
-		                     <td><input type="date" value="${ata.data}"></td>
-				    <td>${ata.reuniao}</td>
+			    <td>${projetolei.id}</td>
+		                     <td><input type="date" value="${projetolei.data}"></td>
+				    <td>${projetolei.numero}</td>
+		                     <td>${projetolei.descricao}</td>
+		                    <td>${projetolei.autor}</td>
+		                      <td>${projetolei.isAtivo}</td>
 <%-- 		                     <td>${vereador.email}</td> --%>
 <%-- 		                    <td>${vereador.hora}</td> --%>
 <%-- 		                      <td>${vereador.presidente}</td> --%>
@@ -64,10 +67,11 @@
 			     <td class="options-width">
 			        
 			     
-                        <a href="edicao?id=${ata.id}" title="Edit"><img src="${pageContext.request.contextPath}/resources/images/visualizar.png" alt="X"/></a>
-                        <a href="/delete?id=${ata.id}"  title="aaa"><img src="${pageContext.request.contextPath}/resources/images/editar.png" alt="placeholder icon" /></a>
-                         <a href="/edit?id=${ata.id}" title="bbb"><img src="${pageContext.request.contextPath}/resources/images/excluir.png" alt="placeholder icon" /></a>
-                                               
+              	     
+                       <a href="${pageContext.request.contextPath}/projetolei/visualizacao?id=${projetolei.id}" title="Edit"><img src="${pageContext.request.contextPath}/resources/images/visualizar.png" alt="X"/></a>
+                        <a href="${pageContext.request.contextPath}/projetolei/editar?id=${projetolei.id}"  title="aaa"><img src="${pageContext.request.contextPath}/resources/images/editar.png" alt="placeholder icon" /></a>
+                         <a href="${pageContext.request.contextPath}/projetolei/delete?id=${projetolei.id}" title="bbb"><img src="${pageContext.request.contextPath}/resources/images/excluir.png" alt="placeholder icon" /></a>
+                                        
                         
                     </td>
 			  </tr>
@@ -85,10 +89,8 @@
 
 <div class="window" id="cadastro">
     <a href="#" class="fechar"><img alt="" src="${pageContext.request.contextPath}/resources/images/exitt.png"></a>
-   <h2> Cadastro Projetos de Lei </h2> 
-<div id="form"> 
- 
- <form id="formAtas" action="add" method="POST">
+
+ <form id="ds" class="form-labels-on-top"action="${pageContext.request.contextPath}/projetolei/add"  method="POST">
  
  
  
@@ -131,35 +133,66 @@
 <!-- 			</fieldset> -->
 			
 			
-	<fieldset>
 		
-		<legend>Dados da Ata</legend>
+		
+			<div class="form-row">
+				   <label>
+				  	<span>Ativo?</span>
+						<input id="isAtivo" name="isAtivo" type="checkbox" checked="checked"/>
+					</label>
+			 </div>
+			 
+			 
+			 
+			  <div class="form-row">
+				   <label>
+				  	<span>Id Projeto de Lei</span>
+						<input id="id" name="id" type="number"/>
+					</label>
+			 </div>
+			 
+		
+			 
+		 	  <div class="form-row">
+			   		<label>
+			  		<span>Numero</span>
+						<input id="numero" name="numero" type="text" />
+					</label>
+		 	 </div>
+			
 
-			<p>Id 
-				<input id="id" name="id" type="text" readonly="readonly"/>
-			</p>
 			
-			<p>Data
-				<input id="data" name="data" type="text" />
-			</p>
-<!-- 			<p>Telefone -->
-<!-- 				<input id="telefone" name="telefone" type="text" /> -->
-<!-- 			</p> -->
+			<div class="form-row">
+			   		<label>
+			  		<span>Descricao</span>
+						<input id="descricao" name="descricao" type="text" />					
+					</label>
+		 	 </div>
+		 	 
+		 	 			<div class="form-row">
+			   		<label>
+			  		<span>Data</span>
+						<input id="data" name="data" type="text" />					
+					</label>
+		 	 </div>
+		 	 
+		 	 	 			<div class="form-row">
+			   		<label>
+			  		<span>Autor</span>
+						<input id="autor" name="autor" type="text" />					
+					</label>
+		 	 </div>
 			
-           
-<!-- 			<p>Email -->
-<!-- 				<input id="email" name="email" type="text" /> -->
-<!-- 			</p> -->
-			<p>Reunião
-				<input id="reuniao" name="reuniao" type="text" />
-			</p>
+	
 			
 			<div id="botoes">
 				<button class="button">Adicionar</button>
 				<button class="button">Apagar</button>
+		 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
+				
 			</div>
 			
-	</fieldset>
+
 				
 
 				
@@ -170,8 +203,7 @@
     
     <div id="mascara"></div>
     
-    
-</div>
+
 
 
 

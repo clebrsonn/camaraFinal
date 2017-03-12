@@ -1,5 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page session="false" %>
+<%@ page session="true" %>
 
 <div id="conteudo" class="conteudo">
 
@@ -43,10 +43,10 @@
 			     <td class="options-width">
 			        
 			     
-                        <a href="edicao?id=${vereador.id}" title="Edit"><img src="${pageContext.request.contextPath}/resources/images/visualizar.png" alt="X"/></a>
-                        <a href="/delete?id=${vereador.id}"  title="aaa"><img src="${pageContext.request.contextPath}/resources/images/editar.png" alt="placeholder icon" /></a>
-                         <a href="/edit?id=${vereador.id}" title="bbb"><img src="${pageContext.request.contextPath}/resources/images/excluir.png" alt="placeholder icon" /></a>
-                                               
+                        <a href="${pageContext.request.contextPath}/vereador/visualizacao?id=${vereador.id}" title="Edit"><img src="${pageContext.request.contextPath}/resources/images/visualizar.png" alt="X"/></a>
+                        <a href="${pageContext.request.contextPath}/vereador/editar?id=${vereador.id}"  title="aaa"><img src="${pageContext.request.contextPath}/resources/images/editar.png" alt="placeholder icon" /></a>
+                         <a href="${pageContext.request.contextPath}/vereador/delete?id=${vereador.id}" title="bbb"><img src="${pageContext.request.contextPath}/resources/images/excluir.png" alt="placeholder icon" /></a>
+                                                            
                         
                     </td>
 			  </tr>
@@ -64,10 +64,10 @@
 			     <td class="options-width">
 			        
 			     
-                        <a href="edicao?id=${vereador.id}" title="Edit"><img src="${pageContext.request.contextPath}/resources/images/visualizar.png" alt="X"/></a>
-                        <a href="/delete?id=${vereador.id}"  title="aaa"><img src="${pageContext.request.contextPath}/resources/images/editar.png" alt="placeholder icon" /></a>
-                         <a href="/edit?id=${vereador.id}" title="bbb"><img src="${pageContext.request.contextPath}/resources/images/excluir.png" alt="placeholder icon" /></a>
-                                               
+                         <a href="${pageContext.request.contextPath}/vereador/visualizacao?id=${vereador.id}" title="Edit"><img src="${pageContext.request.contextPath}/resources/images/visualizar.png" alt="X"/></a>
+                        <a href="${pageContext.request.contextPath}/vereador/editar?id=${vereador.id}"  title="aaa"><img src="${pageContext.request.contextPath}/resources/images/editar.png" alt="placeholder icon" /></a>
+                         <a href="${pageContext.request.contextPath}/vereador/delete?id=${vereador.id}" title="bbb"><img src="${pageContext.request.contextPath}/resources/images/excluir.png" alt="placeholder icon" /></a>
+                                         
                         
                     </td>
 			  </tr>
@@ -85,10 +85,10 @@
 
 <div class="window" id="cadastro">
     <a href="#" class="fechar"><img alt="" src="${pageContext.request.contextPath}/resources/images/exitt.png"></a>
-   <h2> Cadastro Vereadores </h2> 
-<div id="form"> 
+<!--    <h2> Cadastro Vereadores </h2>  -->
+<div class="main-content"> 
  
- <form id="formVereador" action="add" method="POST">
+ <form id="ds" class="form-labels-on-top"action="${pageContext.request.contextPath}/vereador/add"  method="POST">
  
  
  
@@ -131,33 +131,59 @@
 <!-- 			</fieldset> -->
 			
 			
-	<fieldset>
 		
-		<legend>Dados do Vereador</legend>
+		
+			<div class="form-row">
+				   <label>
+				  	<span>Ativo?</span>
+						<input id="isAtivo" name="isAtivo" type="checkbox" checked="checked"/>
+					</label>
+			 </div>
+			 
+			 
+			 
+			  <div class="form-row">
+				   <label>
+				  	<span>Id Vereador</span>
+						<input id="id" name="id" type="number"/>
+					</label>
+			 </div>
+			 
+		
+			 
+		 	  <div class="form-row">
+			   		<label>
+			  		<span>Nome</span>
+						<input id="nome" name="nome" type="text" />
+					</label>
+		 	 </div>
+			
 
-			<p>Id Vereador
-				<input id="id" name="id" type="text" readonly="readonly"/>
-			</p>
 			
-			<p>Nome
-				<input id="nome" name="nome" type="text" />
-			</p>
-			<p>Telefone
-				<input id="telefone" name="telefone" type="text" />
-			</p>
+			<div class="form-row">
+			   		<label>
+			  		<span>Telefone</span>
+						<input id="telefone" name="telefone" type="text" />					
+					</label>
+		 	 </div>
+		 	 
+		 	 			<div class="form-row">
+			   		<label>
+			  		<span>Email</span>
+						<input id="email" name="email" type="text" />					
+					</label>
+		 	 </div>
 			
-           
-			<p>Email
-				<input id="email" name="email" type="text" />
-			</p>
 	
 			
 			<div id="botoes">
 				<button class="button">Adicionar</button>
 				<button class="button">Apagar</button>
+		 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
+				
 			</div>
 			
-	</fieldset>
+
 				
 
 				

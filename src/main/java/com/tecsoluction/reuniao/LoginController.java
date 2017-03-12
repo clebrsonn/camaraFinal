@@ -1,5 +1,6 @@
 package com.tecsoluction.reuniao;
 
+import java.util.List;
 import java.util.Locale;
 
 import org.slf4j.Logger;
@@ -10,11 +11,13 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.tecsoluction.reuniao.entidade.Usuario;
+import com.tecsoluction.reuniao.framework.AbstractController;
 import com.tecsoluction.reuniao.servicos.impl.UsuarioServicoImpl;
 
 /**
@@ -22,7 +25,7 @@ import com.tecsoluction.reuniao.servicos.impl.UsuarioServicoImpl;
  */
 @Controller
 @Scope("request")
-public class LoginController {
+public class LoginController  {
 
     private static final Logger logger = LoggerFactory.getLogger(LoginController.class);
 
@@ -105,5 +108,12 @@ public class LoginController {
 		}
 		return userName;
 	}
-
+	
+	
+//	 @ModelAttribute
+//	    public void addAttributes(Model model) {
+//
+//	        List<Categoria> categoriaList = getDao().getAll();
+//	        model.addAttribute("categoriaList", categoriaList);
+//	    }
 }

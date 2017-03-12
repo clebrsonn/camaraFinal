@@ -3,7 +3,9 @@ package com.tecsoluction.reuniao.entidade;
 import java.io.Serializable;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -93,7 +95,9 @@ public class Usuario implements Serializable {
 		this.isAtivo=valor;
 	}
 	
-	 	@ManyToMany
+//	 , cascade=CascadeType.ALL
+	
+	 	@ManyToMany(fetch = FetchType.EAGER)
 	    @JoinTable(name = "usuario_role", joinColumns = @JoinColumn(name = "idusuario"), inverseJoinColumns = @JoinColumn(name = "idrole"))
 	    public Set<Role> getRoles() {
 	        return roles;
@@ -106,10 +110,11 @@ public class Usuario implements Serializable {
 		/* (non-Javadoc)
 		 * @see java.lang.Object#toString()
 		 */
+	    
+	    
 		@Override
 		public String toString() {
-			return "Usuario [idusuario=" + idusuario + ", username=" + username + ", senha=" + senha + ", email="
-					+ email + ", isAtivo=" + isAtivo + ", roles=" + roles + "]";
+			return username;
 		}
 	
 	

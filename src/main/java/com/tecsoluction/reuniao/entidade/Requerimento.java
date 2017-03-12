@@ -12,10 +12,11 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotNull;
 
 
 @Entity
-@Table(name = "ATA")
+@Table(name = "REQUERIMENTO")
 public class Requerimento implements Serializable{
 
 	/**
@@ -34,22 +35,86 @@ public class Requerimento implements Serializable{
  	    @Column(name="DATA")
  	    private Date data;
  	    
- 	    @OneToOne
- 	    private Reuniao reuniao;
-//
-//
-//	    @Column(name = "LOCAL")
-//	    private String local;
-//	    
-//	    @Column(name = "HORA")
-//	    private String hora;
-//
-//	    @Column(name = "PRESIDENTE")
-//	    private String presidente;
-////
-//	    @Column(name = "PRIMEIROSECRETARIO")
-//	    private String primeirosecretario;
+
+ 	    @NotNull
+ 	    @Column(name = "NUMERO")
+ 	    private String numero;
+
+ 	    
+ 	    @NotNull
+ 	    @Column(name = "DESCRICAO")
+ 	    private String descricao;
+
+ 	    
+ 	    @NotNull
+ 	    @Column(name = "AUTOR")
+ 	    private String autor;
+ 	    
+ 	    
+ 		private boolean isAtivo;
+
+ 		
+ 		public Requerimento() {
+			// TODO Auto-generated constructor stub
+		}
+ 		
+ 		
+ 		public long getId() {
+ 	        return this.id;
+ 	    }
+
+ 		public void setId(long numero) {
+ 	        this.id = numero;
+ 	    }
+
+ 		public String getNumero() {
+ 	        return this.numero;
+ 	    }
+
+ 		public void setNumero(String numero) {
+ 	        this.numero = numero;
+ 	    }
+
+ 		public String getDescricao() {
+ 	        return this.descricao;
+ 	    }
+
+ 		public void setDescricao(String descricao) {
+ 	        this.descricao = descricao;
+ 	    }
+
+ 		public String getAutor() {
+ 	        return this.autor;
+ 	    }
+
+ 		public void setAutor(String autor) {
+ 	        this.autor = autor;
+ 	    }
+
+ 		public Date getData() {
+ 	        return this.data;
+ 	    }
+
+ 		public void setData(Date datacriacao) {
+ 	        this.data = datacriacao;
+ 	    }
+ 		
+ 		public boolean getIsAtivo(){
+ 			
+ 			return isAtivo;
+ 		}
+ 		
+ 		public void setIsAtivo(boolean valor){
+ 			
+ 			this.isAtivo=valor;
+ 		}
+ 		
+
 	
-	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return "REQUERIMENTO Nº"+ numero;
+	}
 
 }

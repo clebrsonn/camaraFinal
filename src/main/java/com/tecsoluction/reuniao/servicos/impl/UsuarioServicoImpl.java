@@ -13,8 +13,12 @@ public class UsuarioServicoImpl implements UsuarioService {
 
 	
 	
+	
+	
 	@Resource
     private DaoGenerico<Usuario, Long> usuarioDao;
+	
+	
 
 	public DaoGenerico<Usuario, Long> getUsuarioDao() {
 		return usuarioDao;
@@ -23,10 +27,6 @@ public class UsuarioServicoImpl implements UsuarioService {
 	public void setUsuarioDao(DaoGenerico<Usuario, Long> usuarioDao) {
 		this.usuarioDao = usuarioDao;
 	}
-	
-	
-	
-	
 	
 	
 	@Override
@@ -40,5 +40,20 @@ public class UsuarioServicoImpl implements UsuarioService {
         usuario = getUsuarioDao().pesqParam(query , params);
         return usuario;
 	}
+
+	@Override
+	public Usuario buscaPorUserName(String username) {
+		
+		Usuario usuario = null;
+        String query = "SELECT u FROM Usuario u WHERE u.username=:username";
+        Map<String, Object> params = new HashMap<String, Object>();
+        params.put("username", username);
+//        params.put("senha", senha);
+        usuario = getUsuarioDao().pesqParam(query , params);
+      
+        return usuario;
+	}
+	
+	
 
 }

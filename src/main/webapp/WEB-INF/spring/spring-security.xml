@@ -20,7 +20,7 @@
 <!--     	 <security:logout logout-success-url="/" /> -->
          <security:intercept-url pattern="/resources/**" access="permitAll" />  
         <security:intercept-url pattern="/home**" access="hasRole('ROLE_MEMBRO')"/>
-<security:logout logout-success-url="/"/>
+		<security:logout logout-success-url="/"/>
 <!--         		<security:intercept-url pattern="/**" access="isAnonymous()"/> -->
 
     </security:http>
@@ -68,7 +68,7 @@
 
 		authorities-by-username-query="SELECT usuario.username, role.name as authorities
   										FROM usuario, usuario_role ,role
-   										WHERE usuario.username = ? AND usuario.id = usuario_role.idusuario AND role.id=usuario_role.idusuario"/>
+   										WHERE usuario.username = ? AND usuario.id = usuario_role.idusuario AND role.id=usuario_role.idrole"/>
 
         </security:authentication-provider>
 

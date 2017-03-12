@@ -1,5 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page session="false" %>
+<%@ page session="true" %>
 
 <div id="conteudo" class="conteudo">
 
@@ -9,7 +9,7 @@
     	<tr class="titleTr">
 				    <td class="titleTd">Ordem Dia</td>
 				       <td class="search"> <input type="text"></td>
-				    <td colspan="1"></td>
+				    <td colspan="2"></td>
 				    <td><a href="#cadastro" rel="modal" ><img src="${pageContext.request.contextPath}/resources/images/add.png"></div></a></td>
   				</tr>
   				
@@ -17,7 +17,7 @@
   				    <td>Id</td>
 				    <td>Data</td>
 				    <td>Reuniao</td>
-<!-- 				    <td>Email</td> -->
+				    <td>isAtivo</td>
 <!-- 				    <td>Hora</td> -->
 <!-- 				     <td>Presidente</td> -->
 <!-- 				    <td>Primeiro Secretário</td> -->
@@ -28,46 +28,46 @@
   				 
   				 
       
-  <c:forEach var="ata" items="${ataList}" varStatus="id">
+  <c:forEach var="ordemdia" items="${ordemdiaList}" varStatus="id">
 
 		<c:choose>
-		  <c:when test="${ata.id % 2 == 0}">
+		  <c:when test="${ordemdia.id % 2 == 0}">
 		    <tr class="trow">
-			     <td>${ata.id}</td>
-		                     <td><input type="date" value="${ata.data}"></td>
-				    <td>${ata.reuniao}</td>
-<%-- 		                     <td>${vereador.email}</td> --%>
+			     <td>${ordemdia.id}</td>
+		                     <td><input type="date" value="${ordemdia.data}"></td>
+				    <td>${ordemdia.reuniao}</td>
+		                     <td>${ordemdia.isAtivo}</td>
 <%-- 		                    <td>${vereador.hora}</td> --%>
 <%-- 		                      <td>${vereador.presidente}</td> --%>
 <%-- 		                     	<td>${vereador.primeirosecretario}</td> --%>
-			     <td class="options-width">
+		     <td class="options-width">
 			        
 			     
-                        <a href="edicao?id=${ata.id}" title="Edit"><img src="${pageContext.request.contextPath}/resources/images/visualizar.png" alt="X"/></a>
-                        <a href="/delete?id=${ata.id}"  title="aaa"><img src="${pageContext.request.contextPath}/resources/images/editar.png" alt="placeholder icon" /></a>
-                         <a href="/edit?id=${ata.id}" title="bbb"><img src="${pageContext.request.contextPath}/resources/images/excluir.png" alt="placeholder icon" /></a>
-                                               
+                        <a href="${pageContext.request.contextPath}/ordemdia/visualizacao?id=${ordemdia.id}" title="Edit"><img src="${pageContext.request.contextPath}/resources/images/visualizar.png" alt="X"/></a>
+                        <a href="${pageContext.request.contextPath}/ordemdia/editar?id=${ordemdia.id}"  title="aaa"><img src="${pageContext.request.contextPath}/resources/images/editar.png" alt="placeholder icon" /></a>
+                         <a href="${pageContext.request.contextPath}/ordemdia/delete?id=${ordemdia.id}" title="bbb"><img src="${pageContext.request.contextPath}/resources/images/excluir.png" alt="placeholder icon" /></a>
+                                                            
                         
                     </td>
 			  </tr>
 		    
 		  </c:when>
-		  <c:when test="${ata.id % 2 != 0}">
-		           <tr class="trow">
-			     <td>${ata.id}</td>
-		                     <td><input type="date" value="${ata.data}"></td>
-				    <td>${ata.reuniao}</td>
-<%-- 		                     <td>${vereador.email}</td> --%>
+		  <c:when test="${ordemdia.id % 2 != 0}">
+		           		    <tr class="trow">
+			     <td>${ordemdia.id}</td>
+		                     <td><input type="date" value="${ordemdia.data}"></td>
+				    <td>${ordemdia.reuniao}</td>
+		                     <td>${ordemdia.isAtivo}</td>
 <%-- 		                    <td>${vereador.hora}</td> --%>
 <%-- 		                      <td>${vereador.presidente}</td> --%>
 <%-- 		                     	<td>${vereador.primeirosecretario}</td> --%>
-			     <td class="options-width">
+		     <td class="options-width">
 			        
 			     
-                        <a href="edicao?id=${ata.id}" title="Edit"><img src="${pageContext.request.contextPath}/resources/images/visualizar.png" alt="X"/></a>
-                        <a href="/delete?id=${ata.id}"  title="aaa"><img src="${pageContext.request.contextPath}/resources/images/editar.png" alt="placeholder icon" /></a>
-                         <a href="/edit?id=${ata.id}" title="bbb"><img src="${pageContext.request.contextPath}/resources/images/excluir.png" alt="placeholder icon" /></a>
-                                               
+                        <a href="${pageContext.request.contextPath}/ordemdia/visualizacao?id=${ordemdia.id}" title="Edit"><img src="${pageContext.request.contextPath}/resources/images/visualizar.png" alt="X"/></a>
+                        <a href="${pageContext.request.contextPath}/ordemdia/editar?id=${ordemdia.id}"  title="aaa"><img src="${pageContext.request.contextPath}/resources/images/editar.png" alt="placeholder icon" /></a>
+                         <a href="${pageContext.request.contextPath}/ordemdia/delete?id=${ordemdia.id}" title="bbb"><img src="${pageContext.request.contextPath}/resources/images/excluir.png" alt="placeholder icon" /></a>
+                                                            
                         
                     </td>
 			  </tr>
@@ -85,10 +85,11 @@
 
 <div class="window" id="cadastro">
     <a href="#" class="fechar"><img alt="" src="${pageContext.request.contextPath}/resources/images/exitt.png"></a>
-   <h2> Cadastro Ordem Dia </h2> 
-<div id="form"> 
+
+
+<div class="main-content"> 
  
- <form id="formAtas" action="add" method="POST">
+ <form id="ds" class="form-labels-on-top"action="${pageContext.request.contextPath}/ordemdia/add"  method="POST">
  
  
  
@@ -131,35 +132,64 @@
 <!-- 			</fieldset> -->
 			
 			
-	<fieldset>
+		<div class="form-row">
+				   <label>
+				  	<span>Ativo?</span>
+						<input id="isAtivo" name="isAtivo" type="checkbox" checked="checked"/>
+					</label>
+			 </div>
+			 
+			 
+			 
+			  <div class="form-row">
+				   <label>
+				  	<span>Id Ordem Dia</span>
+						<input id="id" name="id" type="number" value="${ordemdia.id}"/>
+					</label>
+			 </div>
+			 
 		
-		<legend>Dados da Ata</legend>
+			 
+		 	  
+		 	  <div class="form-row">
+			   		<label>
+			  		<span>Data</span>
+						<input id="data" name="data" type="date" value="${ordemdia.data}" />
+					</label>
+		 	 </div>
+			
 
-			<p>Id 
-				<input id="id" name="id" type="text" readonly="readonly"/>
-			</p>
 			
-			<p>Data
-				<input id="data" name="data" type="text" />
-			</p>
-<!-- 			<p>Telefone -->
-<!-- 				<input id="telefone" name="telefone" type="text" /> -->
-<!-- 			</p> -->
+			<div class="form-row">
+                <label>
+                    <span>Reuniao</span>
+	                    <select id="reuniao"name="reuniao">
+	                                  <optgroup label="Escolha a Reuniao">
+		           			<c:forEach var="reuniao" items="${reuniaoList}">
+		           			
+		           				<option value="${reuniao.id}">${reuniao.numero}</option>
+		           				      				
+		           				
+		       				</c:forEach>
+		                </optgroup>
+	                    </select>
+<!--                     		<button type="reset" >Add</button> -->
+                    
+                </label>
+            </div>
+		 	 
 			
-           
-<!-- 			<p>Email -->
-<!-- 				<input id="email" name="email" type="text" /> -->
-<!-- 			</p> -->
-			<p>Reunião
-				<input id="reuniao" name="reuniao" type="text" />
-			</p>
+	
+	
 			
 			<div id="botoes">
 				<button class="button">Adicionar</button>
 				<button class="button">Apagar</button>
+		 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
+				
 			</div>
 			
-	</fieldset>
+
 				
 
 				

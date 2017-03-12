@@ -12,5 +12,7 @@ public interface UsuarioDao extends DaoGenerico<Usuario, Long> {
 	Usuario retornarUsuarioPorLogin(String username);
 	
 	Usuario retornaUsuarioPorLoginESenha(String username, String senha);
+	
+	
 
 }

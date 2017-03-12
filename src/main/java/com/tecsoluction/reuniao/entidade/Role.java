@@ -23,6 +23,13 @@ public class Role  implements Serializable{
 	private long idrole;
     private String name;
     private Set<Usuario> users;
+    
+    
+    
+    
+    public Role() {
+		// TODO Auto-generated constructor stub
+	}
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -48,6 +55,13 @@ public class Role  implements Serializable{
 
     public void setUsers(Set<Usuario> users) {
         this.users = users;
+    }
+    
+    
+    @Override
+    public String toString() {
+    	// TODO Auto-generated method stub
+    	return name;
     }
 
 }

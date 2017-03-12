@@ -368,7 +368,7 @@
     <!--     MOVIMENTAÇÃO/ADD -->
 
 
-    <definition name="additem" extends="defaultTemplate">
+    <definition name="add" extends="defaultTemplate">
         <put-attribute name="conteudo" value="/WEB-INF/views/jsp/movimentacao/add/additem.jsp"/>
         <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>
 
@@ -444,9 +444,45 @@
         <put-attribute name="conteudo" value="/WEB-INF/views/jsp/edicao/edicaoproduto.jsp"/>
     </definition>
 
-    <definition name="edicaousuario" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/edicao/edicaousuario.jsp"/>
+    <definition name="editarusuario" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/editar/editarusuario.jsp"/>
     </definition>
+    
+        <definition name="editarvereador" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/editar/editarvereador.jsp"/>
+    </definition>
+    
+           <definition name="editarreuniao" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/editar/editarreuniao.jsp"/>
+    </definition>
+    
+      <definition name="editarprojetolei" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/editar/editarprojetolei.jsp"/>
+    </definition>
+    
+        <definition name="editarrequerimento" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/editar/editarrequerimento.jsp"/>
+    </definition>
+
+
+        <definition name="editarmocao" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/editar/editarmocao.jsp"/>
+    </definition>
+
+        <definition name="editarexpediente" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/editar/editarexpediente.jsp"/>
+    </definition>
+
+
+        <definition name="editaroradoresdia" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/editar/editaroradoresdia.jsp"/>
+    </definition>
+    
+            <definition name="editarordemdia" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/editar/editarordemdia.jsp"/>
+    </definition>
+
+
 
     <definition name="edicaogarcon" extends="defaultTemplate">
         <put-attribute name="conteudo" value="/WEB-INF/views/jsp/edicao/edicaogarcon.jsp"/>
@@ -590,5 +626,43 @@
     <definition name="suporte" extends="defaultTemplate">
         <put-attribute name="conteudo" value="/WEB-INF/views/jsp/suporte/suporte.jsp"/>
     </definition>
+    
+<!--     VISUALIZACAO -->
+
+    <definition name="visualizacaousuario" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/visualizacao/visualizacaousuario.jsp"/>
+    </definition>
+    
+        <definition name="visualizacaovereador" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/visualizacao/visualizacaovereador.jsp"/>
+    </definition>
+
+        <definition name="visualizacaoprojetolei" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/visualizacao/visualizacaoprojetolei.jsp"/>
+    </definition>      
+    
+    
+     <definition name="visualizacaorequerimento" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/visualizacao/visualizacaorequerimento.jsp"/>
+    </definition>
+    
+         <definition name="visualizacaomocao" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/visualizacao/visualizacaomocao.jsp"/>
+    </definition>
+    
+             <definition name="visualizacaoexpediente" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/visualizacao/visualizacaoexpediente.jsp"/>
+    </definition>
+    
+               <definition name="visualizacaooradoresdia" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/visualizacao/visualizacaooradoresdia.jsp"/>
+    </definition>
+    
+               <definition name="visualizacaoordemdia" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/visualizacao/visualizacaoordemdia.jsp"/>
+    </definition>
 
 </tiles-definitions>
+
+
+
