@@ -34,7 +34,6 @@ public class Expediente implements Serializable {
     @Column(name = "DATA")
     private Date data;
     
-    
 
     @OneToOne
     private Reuniao reuniao;

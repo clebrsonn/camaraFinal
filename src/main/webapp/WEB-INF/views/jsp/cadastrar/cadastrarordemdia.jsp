@@ -47,6 +47,10 @@
 <!-- 			</p> -->
 			
 <!-- 			</fieldset> -->
+
+
+		    <div class="leftColumn" style="width: 50%; float:left">
+
 			
 			
 		<div class="form-row">
@@ -94,8 +98,69 @@
                     
                 </label>
             </div>
+            
+            </div>
 		 	 
-			
+			<div class="rightColumn" style="width: 50%; float:left">
+    
+
+            
+            
+            <div class="form-row">
+                <label>
+                    <span>Projetos de Leis</span>
+	                    <select id="projetosleis"name="projetosleis" multiple="multiple">
+	                                  <optgroup label="Escolha os Projetos de Leis">
+		           			<c:forEach var="projetolei" items="${projetoleiList}">
+		           			
+		           				<option value="${projetolei.id}">${projetolei.descricao}</option>
+		           				      				
+		           				
+		       				</c:forEach>
+		                </optgroup>
+	                    </select>
+<!--                     		<button type="reset" >Add</button> -->
+                    
+                </label>
+            </div>
+            
+             <div class="form-row">
+                <label>
+                    <span>Requerimento</span>
+	                    <select id="requerimentos"name="requerimentos" multiple="multiple">
+	                                  <optgroup label="Escolha os Requerimentos">
+		           			<c:forEach var="requerimento" items="${requerimentoList}">
+		           			
+		           				<option value="${requerimento.id}">${requerimento.descricao}</option>
+		           				      				
+		           				
+		       				</c:forEach>
+		                </optgroup>
+	                    </select>
+<!--                     		<button type="reset" >Add</button> -->
+                    
+                </label>
+            </div>
+            
+                         <div class="form-row">
+                <label>
+                    <span>Mocao</span>
+	                    <select id="mocoes"name="mocoes" multiple="multiple">
+	                                  <optgroup label="Escolha as Mocoes">
+		           			<c:forEach var="mocao" items="${mocaoList}">
+		           			
+		           				<option value="${mocao.id}">${mocao.descricao}</option>
+		           				      				
+		           				
+		       				</c:forEach>
+		                </optgroup>
+	                    </select>
+<!--                     		<button type="reset" >Add</button> -->
+                    
+                </label>
+            </div>
+            
+            </div>
 	
 	
 			

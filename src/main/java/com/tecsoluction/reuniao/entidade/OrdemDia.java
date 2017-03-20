@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Set;
 
 
 @Entity
@@ -36,6 +37,16 @@ public class OrdemDia implements Serializable {
     
     
     private boolean isAtivo;
+    
+    
+    @OneToMany(fetch = FetchType.EAGER)
+	 private Set<ProjetoLei> projetosleis;
+    
+    @OneToMany(fetch = FetchType.EAGER)
+	 private Set<Requerimento> requerimentos;
+    
+    @OneToMany(fetch = FetchType.EAGER)
+	 private Set<Mocao> mocoes;
 
     
     public long getId() {
@@ -73,6 +84,30 @@ public class OrdemDia implements Serializable {
 	public void setReuniao(Reuniao reuniao) {
         this.reuniao = reuniao;
     }
+    public Set<ProjetoLei> getProjetosLeis() {
+        return projetosleis;
+    }
 
+    public void setProjetosLeis(Set<ProjetoLei> proj) {
+        this.projetosleis = proj;
+    }
+    
+    public Set<Requerimento> getRequerimentos() {
+        return requerimentos;
+    }
+
+    public void setRequerimentos(Set<Requerimento> req) {
+        this.requerimentos = req;
+    }
+    
+    public Set<Mocao> getMocoes() {
+        return mocoes;
+    }
+
+    public void setMocoes(Set<Mocao> mocao) {
+        this.mocoes = mocao;
+    }
+    
+    
 
 }

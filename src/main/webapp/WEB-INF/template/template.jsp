@@ -200,7 +200,7 @@ $(document).ready(function(){
 
 		<%-- 		<tiles:insertAttribute name="barra_usuario_topo" /> --%>
 		
-<%-- 		<tiles:insertAttribute name="menulateral" /> --%>
+		<tiles:insertAttribute name="menulateral" />
 
 
 		<tiles:insertAttribute name="menu" />

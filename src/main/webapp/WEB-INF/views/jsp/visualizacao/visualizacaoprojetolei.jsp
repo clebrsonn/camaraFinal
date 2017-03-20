@@ -84,10 +84,17 @@
 					</label>
 		 	 </div>
 		 	 
-		 	 	 			<div class="form-row">
+		 	 <div class="form-row">
 			   		<label>
 			  		<span>Autor</span>
 						<input id="autor" name="autor" type="text" value="${projetolei.autor}" />					
+					</label>
+		 	 </div>
+		 	 
+		 	 	 	 <div class="form-row">
+			   		<label>
+			  		<span>Expediente</span>
+						<input id="expediente" name="expediente" type="text" value="${projetolei.expediente}" />					
 					</label>
 		 	 </div>
 			

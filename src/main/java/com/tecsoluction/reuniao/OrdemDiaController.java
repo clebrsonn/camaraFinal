@@ -19,10 +19,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.tecsoluction.reuniao.entidade.Mocao;
 import com.tecsoluction.reuniao.entidade.OrdemDia;
+import com.tecsoluction.reuniao.entidade.ProjetoLei;
+import com.tecsoluction.reuniao.entidade.Requerimento;
 import com.tecsoluction.reuniao.entidade.OrdemDia;
 import com.tecsoluction.reuniao.entidade.Reuniao;
+import com.tecsoluction.reuniao.servicos.impl.MocaoServicoImpl;
 import com.tecsoluction.reuniao.servicos.impl.OrdemDiaServicoImpl;
+import com.tecsoluction.reuniao.servicos.impl.ProjetoLeiServicoImpl;
+import com.tecsoluction.reuniao.servicos.impl.RequerimentoServicoImpl;
 import com.tecsoluction.reuniao.servicos.impl.ReuniaoServicoImpl;
 
 
@@ -47,6 +53,22 @@ public class OrdemDiaController {
 	
 	
 	private List< Reuniao> reunioes;
+	
+	@Autowired
+	private ProjetoLeiServicoImpl projetoleiServico;
+	
+	private List<ProjetoLei> projetosleis;
+	
+	@Autowired
+	private RequerimentoServicoImpl requerimentoServico;
+	
+	private List<Requerimento> requerimentos;
+	
+	@Autowired
+	private MocaoServicoImpl mocaoServico;
+	
+	private List<Mocao> mocoes;
+
 
 	
 	
@@ -57,6 +79,19 @@ public class OrdemDiaController {
 
 	        });
 	        
+	        binder.registerCustomEditor(ProjetoLei.class, new com.tecsoluction.reuniao.framework.AbstractEditor<ProjetoLei>(projetoleiServico.getProjetoLeiDao()){
+
+	        });
+	        
+	        binder.registerCustomEditor(Requerimento.class, new com.tecsoluction.reuniao.framework.AbstractEditor<Requerimento>(requerimentoServico.getRequerimentoDao()){
+
+	        });
+	        
+	        binder.registerCustomEditor(Mocao.class, new com.tecsoluction.reuniao.framework.AbstractEditor<Mocao>(mocaoServico.getMocaoDao()){
+
+	        });
+	       
+	        
 	  }
 	  
 	  
@@ -66,10 +101,19 @@ public class OrdemDiaController {
 			  OrdemDia ordemdianew = new OrdemDia();     
 		      
 		       reunioes = reuniaoServico.getReuniaoDao().todos();
+		       
+		       projetosleis = projetoleiServico.getProjetoLeiDao().todos();
+		       
+		       requerimentos = requerimentoServico.getRequerimentoDao().todos();
+		       
+		       mocoes =  mocaoServico.getMocaoDao().todos();
 
 		      ModelAndView cadastrar = new ModelAndView("cadastrarordemdia");
 		      cadastrar.addObject("ordemdia", ordemdianew);
 		      cadastrar.addObject("reuniaoList", reunioes);
+		      cadastrar.addObject("projetoleiList", projetosleis);
+		      cadastrar.addObject("requerimentoList", requerimentos);
+		      cadastrar.addObject("mocaoList", mocoes);
 
 		      
 

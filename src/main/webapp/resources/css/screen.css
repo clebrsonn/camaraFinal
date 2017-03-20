@@ -184,7 +184,7 @@ a:hover.icon-delete  {
 	width:21%; 
 	position:fixed;
 	top:0;
-	right:-17%;
+	right:-18%;
 	z-index:1000;
 	
 	 filter:alpha(opacity=90);
@@ -230,7 +230,7 @@ left:100%;
 	font-weight:bold;
 	font-size:1.6em;
 	font-style:normal;
-	padding-bottom:0.2em;
+	padding-bottom:0.1em;
 	margin: 2em 0 2em 0.81em;
 	color:rgb(255,255,255);
 	border-bottom: 4px solid rgb(155,155,155);
@@ -239,7 +239,7 @@ left:100%;
 	font-style:italic;
 	position:relative;
 	font-size:1.0em;
-	margin:1em 0 1em 4em;
+	margin:1em 0 1em 3em;
 	padding:0;
 /* 	z-index:5;	  */
 
@@ -248,10 +248,10 @@ left:100%;
 	}
 #menulateral li {padding:0; margin:0;}
 #menulateral li a,  #menulateral li a:link {
-	font-size:1.2em;
+	font-size:0.7em;
 	color:rgb(255,255,255);
 	text-decoration: none;
-	padding: 0.8em 0 0.8em 2em;
+	padding: 0.8em 0 0.8em 1em;
 	display: block;
 	-moz-transition: all 1.2s ease;
 			-webkit-transition: all 1.2s ease;

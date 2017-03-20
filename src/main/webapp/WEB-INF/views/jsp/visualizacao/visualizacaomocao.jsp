@@ -96,6 +96,13 @@
 						<input id="homenageado" name="homenageado" type="text" value="${mocao.homenageado}" />					
 					</label>
 		 	 </div>
+		 	 
+		 	  	 	 	 <div class="form-row">
+			   		<label>
+			  		<span>Expediente</span>
+						<input id="expediente" name="expediente" type="text" value="${mocao.expediente}" />					
+					</label>
+		 	 </div>
 			
 	
 			

@@ -4,6 +4,7 @@
 			src="${pageContext.request.contextPath}/resources/images/user.png"/>
 			
 			<label>${usuarioAtt.userName}</label>
+			<label>${usuarioAtt.roles}</label>
 			
 			 <a href="${pageContext.request.contextPath}/" >  Logout</a>
 		

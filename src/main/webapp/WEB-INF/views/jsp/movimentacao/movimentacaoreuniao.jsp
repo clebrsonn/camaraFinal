@@ -60,7 +60,23 @@
 							href="${pageContext.request.contextPath}/reuniao/delete?id=${reuniao.id}"
 							title="bbb"><img
 								src="${pageContext.request.contextPath}/resources/images/excluir.png"
-								alt="placeholder icon" /></a></td>
+								alt="placeholder icon" /></a>
+								
+								
+								
+												<a
+							href="${pageContext.request.contextPath}/reuniao/tocar?id=${reuniao.id}"
+							title="bbb">
+							
+<!-- 							<img -->
+<%-- 								src="${pageContext.request.contextPath}/resources/images/play3.png" --%>
+<!-- 								alt="placeholder icon" />	 -->
+								
+								<audio src="${pageContext.request.contextPath}/resources/audio/audio.mp3" controls="controls">
+								<p>Seu navegador não suporta o elemento audio </p>
+								</audio></a>
+							
+								</td>
 					</tr>
 
 
@@ -91,7 +107,24 @@
 							href="${pageContext.request.contextPath}/reuniao/delete?id=${reuniao.id}"
 							title="bbb"><img
 								src="${pageContext.request.contextPath}/resources/images/excluir.png"
-								alt="placeholder icon" /></a></td>
+								alt="placeholder icon" /></a>
+								
+								
+								
+								
+											<a
+							href="${pageContext.request.contextPath}/reuniao/tocar?id=${reuniao.id}"
+							title="bbb">
+							
+<!-- 							<img -->
+<%-- 								src="${pageContext.request.contextPath}/resources/images/play3.png" --%>
+<!-- 								alt="placeholder icon" />	 -->
+								
+								<audio src="${pageContext.request.contextPath}/resources/audio/audio.mp3" controls="controls">
+								<p>Seu navegador não suporta o elemento audio </p>
+								</audio></a>
+								
+								</td>
 					</tr>
 
 
@@ -101,6 +134,10 @@
 
 		</c:forEach>
 	</table>
+	
+<%-- 	<audio src="${pageContext.request.contextPath}/resources/audio/audio.mp3" controls autoplay loop> --%>
+<!-- <p>Seu navegador não suporta o elemento audio </p> -->
+<!-- </audio> -->
 
 </div>
 

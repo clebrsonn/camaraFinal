@@ -47,7 +47,17 @@
                         <a href="${pageContext.request.contextPath}/oradoresdia/visualizacao?id=${oradoresdia.id}" title="Edit"><img src="${pageContext.request.contextPath}/resources/images/visualizar.png" alt="X"/></a>
                         <a href="${pageContext.request.contextPath}/oradoresdia/editar?id=${oradoresdia.id}"  title="aaa"><img src="${pageContext.request.contextPath}/resources/images/editar.png" alt="placeholder icon" /></a>
                          <a href="${pageContext.request.contextPath}/oradoresdia/delete?id=${oradoresdia.id}" title="bbb"><img src="${pageContext.request.contextPath}/resources/images/excluir.png" alt="placeholder icon" /></a>
-                                                            
+                         
+                                        
+                             											<a
+							href="${pageContext.request.contextPath}/oradoresdia/talk?id=${oradoresdia.id}"
+							title="bbb">
+							
+							<img
+								src="${pageContext.request.contextPath}/resources/images/talk.png"
+								alt="placeholder icon" />	
+								
+							</a>                                    
                         
                     </td>
 			  </tr>
@@ -69,7 +79,15 @@
                         <a href="${pageContext.request.contextPath}/oradoresdia/editar?id=${oradoresdia.id}"  title="aaa"><img src="${pageContext.request.contextPath}/resources/images/editar.png" alt="placeholder icon" /></a>
                          <a href="${pageContext.request.contextPath}/oradoresdia/delete?id=${oradoresdia.id}" title="bbb"><img src="${pageContext.request.contextPath}/resources/images/excluir.png" alt="placeholder icon" /></a>
                                                             
-                        
+                                   											<a
+							href="${pageContext.request.contextPath}/oradoresdia/talk?id=${oradoresdia.id}"
+							title="bbb">
+							
+							<img
+								src="${pageContext.request.contextPath}/resources/images/talk.png"
+								alt="placeholder icon" />	
+								
+							</a> 
                     </td>
 			  </tr>
 		  </c:when>
