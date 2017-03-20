@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -52,6 +53,12 @@ public class Requerimento implements Serializable{
  	    
  	    
  		private boolean isAtivo;
+ 		
+ 		
+ 		@ManyToOne
+ 		private Expediente expediente;
+ 		
+ 		
 
  		
  		public Requerimento() {
@@ -109,7 +116,13 @@ public class Requerimento implements Serializable{
  			this.isAtivo=valor;
  		}
  		
+ 		public Expediente getExpediente() {
+ 	        return this.expediente;
+ 	    }
 
+ 		public void setExpediente(Expediente exp) {
+ 	        this.expediente = exp;
+ 	    }
 	
 	@Override
 	public String toString() {

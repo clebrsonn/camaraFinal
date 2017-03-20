@@ -131,6 +131,60 @@ $(document).ready(function(){
 });
   
  </script> 
+ 
+ 
+ 
+ 
+ 
+ 
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+       <script type="text/javascript">
+           var contador = 1;
+             
+           //Adiciona um novo item na tabela
+              function adiciona(){
+
+              var vid = $('#roless option:selected').val();
+              
+              
+              var vname = $('#roless option:selected').text();
+
+              
+              //var vname = $('#role.name').val();
+                    
+
+              
+//               document.getElementById("roless").options[document.getElementById("Pais").selectedIndex].text
+
+              
+//               $('#roles').append('<li>'+vid+'</li>' +
+		   $('#roles').append('<li>'+vname+'</li>');
+//                                                                        '<td><input type=text name="role['+contador+'].name" id="role['+contador+'].name" value="'+vname+'"></td>'+
+//                                                                        '<td><button  value="Delete"  onclick="javascript:removeLinha(this)"/></td></tr>');
+              contador++;
+
+              
+              
+              
+              
+              //                      $('#rolesAdicionados').append('<tr><td><input type="text" name="roles['+ contador +'].id" id="role['+ contador +'].id" value="' + vid +'"></td>'+
+// //                                                                               '<td><input type=text name="role['+contador+'].name" id="role['+contador+'].name" value="'+vname+'"></td>'+
+//                                                                               '<td><button  value="Delete"  onclick="javascript:removeLinha(this)"/></td></tr>');
+//                      contador++;
+                     
+                     
+                     
+              }
+
+              //Remove o item da tabela
+        function removeLinha(row) {
+//               $(row).parent().parent().remove();
+
+            $(row).parent().remove();
+
+        }
+       
+    </script>
  	
  
 </head>

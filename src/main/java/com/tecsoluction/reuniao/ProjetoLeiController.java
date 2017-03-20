@@ -23,6 +23,7 @@ import com.tecsoluction.reuniao.dao.ProjetoLeiDao;
 import com.tecsoluction.reuniao.dao.ReuniaoDao;
 import com.tecsoluction.reuniao.entidade.Ata;
 import com.tecsoluction.reuniao.entidade.ProjetoLei;
+import com.tecsoluction.reuniao.entidade.ProjetoLei;
 import com.tecsoluction.reuniao.entidade.Reuniao;
 import com.tecsoluction.reuniao.entidade.Usuario;
 import com.tecsoluction.reuniao.framework.AbstractController;
@@ -49,6 +50,22 @@ public class ProjetoLeiController  {
 	private static final Logger logger = LoggerFactory.getLogger(ProjetoLeiController.class);
 	
 	
+	
+	
+	 @RequestMapping(value = "/cadastrar", method = RequestMethod.GET)
+	  public ModelAndView CadastrarProjetoLeiForm(HttpServletRequest request, ProjetoLei projetolei) {
+
+		  ProjetoLei projetoleinew = new ProjetoLei();     
+	      
+
+	      ModelAndView cadastrar = new ModelAndView("cadastrarprojetolei");
+	      cadastrar.addObject("projetolei", projetoleinew);
+
+	      
+
+	      return  cadastrar;
+	      
+	 }
 	
 	
 	 @RequestMapping(value = "/movimentacao", method = RequestMethod.GET)

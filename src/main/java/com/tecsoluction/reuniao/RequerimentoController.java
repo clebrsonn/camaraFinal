@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.tecsoluction.reuniao.entidade.Requerimento;
+import com.tecsoluction.reuniao.entidade.Reuniao;
 import com.tecsoluction.reuniao.servicos.impl.RequerimentoServicoImpl;
 
 
@@ -37,6 +38,29 @@ public class RequerimentoController {
 	
 	private List<Requerimento> requerimentos;
 
+	
+	
+	
+	
+	
+	
+	
+	 @RequestMapping(value = "/cadastrar", method = RequestMethod.GET)
+	  public ModelAndView CadastrarRequerimentoForm(HttpServletRequest request, Requerimento requerimento) {
+
+		  Requerimento requerimentonew = new Requerimento();     
+	      
+
+	      ModelAndView cadastrar = new ModelAndView("cadastrarrequerimento");
+	      cadastrar.addObject("requerimento", requerimentonew);
+
+	      
+
+	      return  cadastrar;
+	      
+	 }
+	
+	
 	
 	
 	 @RequestMapping(value = "/movimentacao", method = RequestMethod.GET)

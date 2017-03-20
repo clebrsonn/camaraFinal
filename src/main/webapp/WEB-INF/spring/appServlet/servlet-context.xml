@@ -272,6 +272,21 @@
 		>
   
   </bean>
+  
+        <bean id="ataDao"
+		class="com.tecsoluction.reuniao.dao.impl.AtaDaoImpl"
+		scope="request"
+		>
+  
+  </bean>
+  
+    <bean id="ataService"
+		class="com.tecsoluction.reuniao.servicos.impl.AtaServicoImpl"
+		scope="request"
+		>
+  
+  </bean>
+  
 
 
     <jpa:repositories base-package="com.tecsoluction.reuniao.dao"/>

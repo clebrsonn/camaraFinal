@@ -23,11 +23,18 @@ import com.tecsoluction.reuniao.dao.ExpedienteDao;
 import com.tecsoluction.reuniao.dao.ReuniaoDao;
 import com.tecsoluction.reuniao.entidade.Ata;
 import com.tecsoluction.reuniao.entidade.Expediente;
+import com.tecsoluction.reuniao.entidade.Mocao;
+import com.tecsoluction.reuniao.entidade.ProjetoLei;
+import com.tecsoluction.reuniao.entidade.Requerimento;
+import com.tecsoluction.reuniao.entidade.Expediente;
 import com.tecsoluction.reuniao.entidade.Reuniao;
 import com.tecsoluction.reuniao.entidade.Role;
 import com.tecsoluction.reuniao.entidade.Vereador;
 import com.tecsoluction.reuniao.framework.AbstractController;
 import com.tecsoluction.reuniao.servicos.impl.ExpedienteServicoImpl;
+import com.tecsoluction.reuniao.servicos.impl.MocaoServicoImpl;
+import com.tecsoluction.reuniao.servicos.impl.ProjetoLeiServicoImpl;
+import com.tecsoluction.reuniao.servicos.impl.RequerimentoServicoImpl;
 import com.tecsoluction.reuniao.servicos.impl.ReuniaoServicoImpl;
 import com.tecsoluction.reuniao.servicos.impl.VereadorServicoImpl;
 
@@ -57,15 +64,92 @@ public class ExpedienteController {
 	private List< Reuniao> reunioes;
 	
 	
+	@Autowired
+	private ProjetoLeiServicoImpl projetoleiServico;
+	
+	private List<ProjetoLei> projetosleis;
+	
+	@Autowired
+	private RequerimentoServicoImpl requerimentoServico;
+	
+	private List<Requerimento> requerimentos;
+	
+	@Autowired
+	private MocaoServicoImpl mocaoServico;
+	
+	private List<Mocao> mocoes;
+	
+	
+	@Autowired
+	private VereadorServicoImpl vereadorServico;
+	
+	private List<Vereador> vereadores;
+	
+	
 
 	  @InitBinder
 	    protected void initBinder(HttpServletRequest request, ServletRequestDataBinder binder) {
+		  
 
 	        binder.registerCustomEditor(Reuniao.class, new com.tecsoluction.reuniao.framework.AbstractEditor<Reuniao>(reuniaoServico.getReuniaoDao()){
 
 	        });
 	        
+	        binder.registerCustomEditor(ProjetoLei.class, new com.tecsoluction.reuniao.framework.AbstractEditor<ProjetoLei>(projetoleiServico.getProjetoLeiDao()){
+
+	        });
+	        
+	        binder.registerCustomEditor(Requerimento.class, new com.tecsoluction.reuniao.framework.AbstractEditor<Requerimento>(requerimentoServico.getRequerimentoDao()){
+
+	        });
+	        
+	        binder.registerCustomEditor(Mocao.class, new com.tecsoluction.reuniao.framework.AbstractEditor<Mocao>(mocaoServico.getMocaoDao()){
+
+	        });
+	        
+	        binder.registerCustomEditor(Vereador.class, new com.tecsoluction.reuniao.framework.AbstractEditor<Vereador>(vereadorServico.getVereadorDao()){
+
+	        });
+	        
 	  }
+	  
+	  
+	  
+		 @RequestMapping(value = "/cadastrar", method = RequestMethod.GET)
+		  public ModelAndView CadastrarExpedienteForm(HttpServletRequest request, Expediente expediente) {
+
+			  Expediente expedientenew = new Expediente();     
+		      
+		       reunioes = reuniaoServico.getReuniaoDao().todos();
+		       
+		       projetosleis = projetoleiServico.getProjetoLeiDao().todos();
+		       
+		       requerimentos = requerimentoServico.getRequerimentoDao().todos();
+		       
+		       mocoes =  mocaoServico.getMocaoDao().todos();
+		       
+		       vereadores = vereadorServico.getVereadorDao().todos();
+
+
+		      ModelAndView cadastrar = new ModelAndView("cadastrarexpediente");
+		      cadastrar.addObject("expediente", expedientenew);
+		      cadastrar.addObject("reuniaoList", reunioes);
+		      cadastrar.addObject("projetoleiList", projetosleis);
+		      cadastrar.addObject("requerimentoList", requerimentos);
+		      cadastrar.addObject("mocaoList", mocoes);
+		      cadastrar.addObject("vereadorList", vereadores);
+
+
+		      
+
+		      return  cadastrar;
+		      
+		 }
+		
+	  
+	  
+	  
+	  
 	
 	
 	   @RequestMapping(value = "/movimentacao", method = RequestMethod.GET)

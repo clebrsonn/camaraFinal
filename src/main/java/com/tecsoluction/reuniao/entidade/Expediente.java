@@ -45,20 +45,20 @@ public class Expediente implements Serializable {
     
     
     private boolean isAtivo;
+    
+     @OneToMany(fetch = FetchType.EAGER)
+	 private Set<ProjetoLei> projetosleis;
+     
+     @OneToMany(fetch = FetchType.EAGER)
+	 private Set<Requerimento> requerimentos;
+     
+     @OneToMany(fetch = FetchType.EAGER)
+	 private Set<Mocao> mocoes;
+     
+     @OneToMany(fetch = FetchType.EAGER)
+	 private Set<Vereador> vereadores;
 
-    /**
-     */
-//    @OneToMany
-//    private Set<ProjetoLei> projetosdelei = new HashSet<ProjetoLei>();
-//
-//    /**
-//     */
-//    @OneToMany
-//    private Set<Requerimento> requerimentos = new HashSet<Requerimento>();
-//    
-//   
-//    @OneToMany
-//    private Set<Mocao> mocoes = new HashSet<Mocao>();
+
     
     
 	public long getId() {
@@ -105,6 +105,39 @@ public class Expediente implements Serializable {
 	        this.reuniao = reuniao;
 	    }
     
-    
+	 	
+	    public Set<ProjetoLei> getProjetosLeis() {
+	        return projetosleis;
+	    }
+
+	    public void setProjetosLeis(Set<ProjetoLei> proj) {
+	        this.projetosleis = proj;
+	    }
+	    
+	    public Set<Requerimento> getRequerimentos() {
+	        return requerimentos;
+	    }
+
+	    public void setRequerimentos(Set<Requerimento> req) {
+	        this.requerimentos = req;
+	    }
+	    
+	    public Set<Mocao> getMocoes() {
+	        return mocoes;
+	    }
+
+	    public void setMocoes(Set<Mocao> mocao) {
+	        this.mocoes = mocao;
+	    }
+	    
+	    public Set<Vereador> getVereadores() {
+	        return vereadores;
+	    }
+
+	    public void setVereadores(Set<Vereador> vereadores) {
+	        this.vereadores = vereadores;
+	    }
+	    
+	    
 
 }

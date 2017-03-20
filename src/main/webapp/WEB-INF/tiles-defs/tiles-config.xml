@@ -45,14 +45,48 @@
         <put-attribute name="conteudo" value="/WEB-INF/views/jsp/cadastro/cadastro.jsp"/>
     </definition>
 
-    <definition name="cadastroreuniao" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/cadastro/cadastroreuniao.jsp"/>
+    <definition name="cadastrarusuario" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/cadastrar/cadastrarusuario.jsp"/>
     </definition>
 
 
-    <definition name="cadastrovereador" extends="defaultTemplate">
-        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/cadastro/cadastrovereador.jsp"/>
+    <definition name="cadastrarvereador" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/cadastrar/cadastrarvereador.jsp"/>
     </definition>
+    
+        <definition name="cadastrarexpediente" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/cadastrar/cadastrarexpediente.jsp"/>
+    </definition>
+    
+            <definition name="cadastraroradoresdia" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/cadastrar/cadastraroradoresdia.jsp"/>
+    </definition>
+    
+              <definition name="cadastrarordemdia" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/cadastrar/cadastrarordemdia.jsp"/>
+    </definition>
+
+            <definition name="cadastrarprojetolei" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/cadastrar/cadastrarprojetolei.jsp"/>
+    </definition>
+    
+                <definition name="cadastrarrequerimento" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/cadastrar/cadastrarrequerimento.jsp"/>
+    </definition>
+    
+                  <definition name="cadastrarmocao" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/cadastrar/cadastrarmocao.jsp"/>
+    </definition>
+    
+                      <definition name="cadastrarreuniao" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/cadastrar/cadastrarreuniao.jsp"/>
+    </definition>
+
+
+
+
+
+
 
 
     <definition name="cadastrousuario" extends="defaultTemplate">
@@ -482,7 +516,13 @@
         <put-attribute name="conteudo" value="/WEB-INF/views/jsp/editar/editarordemdia.jsp"/>
     </definition>
 
-
+        <definition name="editarreuniao" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/editar/editarreuniao.jsp"/>
+    </definition>
+    
+            <definition name="editarata" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/editar/editarata.jsp"/>
+    </definition>
 
     <definition name="edicaogarcon" extends="defaultTemplate">
         <put-attribute name="conteudo" value="/WEB-INF/views/jsp/edicao/edicaogarcon.jsp"/>
@@ -660,6 +700,14 @@
     
                <definition name="visualizacaoordemdia" extends="defaultTemplate">
         <put-attribute name="conteudo" value="/WEB-INF/views/jsp/visualizacao/visualizacaoordemdia.jsp"/>
+    </definition>
+    
+           <definition name="visualizacaoreuniao" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/visualizacao/visualizacaoreuniao.jsp"/>
+    </definition>
+    
+             <definition name="visualizacaoata" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/visualizacao/visualizacaoata.jsp"/>
     </definition>
 
 </tiles-definitions>

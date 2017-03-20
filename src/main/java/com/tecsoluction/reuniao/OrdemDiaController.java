@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.tecsoluction.reuniao.entidade.OrdemDia;
+import com.tecsoluction.reuniao.entidade.OrdemDia;
 import com.tecsoluction.reuniao.entidade.Reuniao;
 import com.tecsoluction.reuniao.servicos.impl.OrdemDiaServicoImpl;
 import com.tecsoluction.reuniao.servicos.impl.ReuniaoServicoImpl;
@@ -57,6 +58,24 @@ public class OrdemDiaController {
 	        });
 	        
 	  }
+	  
+	  
+		 @RequestMapping(value = "/cadastrar", method = RequestMethod.GET)
+		  public ModelAndView CadastrarOrdemDiaForm(HttpServletRequest request, OrdemDia ordemdia) {
+
+			  OrdemDia ordemdianew = new OrdemDia();     
+		      
+		       reunioes = reuniaoServico.getReuniaoDao().todos();
+
+		      ModelAndView cadastrar = new ModelAndView("cadastrarordemdia");
+		      cadastrar.addObject("ordemdia", ordemdianew);
+		      cadastrar.addObject("reuniaoList", reunioes);
+
+		      
+
+		      return  cadastrar;
+		      
+		 }
 	
 	 @RequestMapping(value = "/movimentacao", method = RequestMethod.GET)
 	    public ModelAndView MovimentacaoOrdemDia() {

@@ -1,12 +1,15 @@
 package com.tecsoluction.reuniao.entidade;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 
@@ -34,6 +37,8 @@ public class Vereador implements Serializable {
     @Column(name = "isAtivo")
 	private boolean isAtivo;
     
+    @OneToMany(mappedBy="vereadores")
+	private List<Expediente> expedientes;
     
     public Vereador() {
 		// TODO Auto-generated constructor stub
@@ -90,6 +95,14 @@ public class Vereador implements Serializable {
     	this.isAtivo = ativo;
     }
     
+    
+		public List<Expediente> getExpedientes() {
+ 	        return this.expedientes;
+ 	    }
+
+ 		public void setExpedientes( List<Expediente> exp) {
+ 	        this.expedientes = exp;
+ 	    }
     
     @Override
     public String toString() {

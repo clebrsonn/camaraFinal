@@ -9,7 +9,7 @@
     	<tr class="titleTr">
 				    <td class="titleTd">Atas</td>
 				       <td class="search"> <input type="text"></td>
-				    <td colspan="1"></td>
+				    <td colspan="4"></td>
 				    <td><a href="#cadastro" rel="modal" ><img src="${pageContext.request.contextPath}/resources/images/add.png"></div></a></td>
   				</tr>
   				
@@ -17,9 +17,9 @@
   				    <td>Id</td>
 				    <td>Data</td>
 				    <td>Reuniao</td>
-<!-- 				    <td>Email</td> -->
-<!-- 				    <td>Hora</td> -->
-<!-- 				     <td>Presidente</td> -->
+				    <td>Status</td>
+				    <td>Responsavel</td>
+				     <td>isAtivo</td>
 <!-- 				    <td>Primeiro Secretário</td> -->
 <!-- 				    <td>Status</td> -->
 				    <td>Ação</td>
@@ -34,19 +34,19 @@
 		  <c:when test="${ata.id % 2 == 0}">
 		    <tr class="trow">
 			     <td>${ata.id}</td>
-		                     <td><input type="date" value="${ata.data}"></td>
+		           <td><input type="date" value="${ata.data}"></td>
 				    <td>${ata.reuniao}</td>
-<%-- 		                     <td>${vereador.email}</td> --%>
-<%-- 		                    <td>${vereador.hora}</td> --%>
-<%-- 		                      <td>${vereador.presidente}</td> --%>
+		                     <td>${ata.status}</td>
+		                    <td>${ata.responsavel}</td>
+		                      <td>${ata.isAtivo}</td>
 <%-- 		                     	<td>${vereador.primeirosecretario}</td> --%>
 			     <td class="options-width">
 			        
 			     
-                        <a href="edicao?id=${ata.id}" title="Edit"><img src="${pageContext.request.contextPath}/resources/images/visualizar.png" alt="X"/></a>
-                        <a href="/delete?id=${ata.id}"  title="aaa"><img src="${pageContext.request.contextPath}/resources/images/editar.png" alt="placeholder icon" /></a>
-                         <a href="/edit?id=${ata.id}" title="bbb"><img src="${pageContext.request.contextPath}/resources/images/excluir.png" alt="placeholder icon" /></a>
-                                               
+                        <a href="${pageContext.request.contextPath}/ata/visualizacao?id=${ata.id}" title="Edit"><img src="${pageContext.request.contextPath}/resources/images/visualizar.png" alt="X"/></a>
+                        <a href="${pageContext.request.contextPath}/ata/editar?id=${ata.id}"  title="aaa"><img src="${pageContext.request.contextPath}/resources/images/editar.png" alt="placeholder icon" /></a>
+                         <a href="${pageContext.request.contextPath}/ata/delete?id=${ata.id}" title="bbb"><img src="${pageContext.request.contextPath}/resources/images/excluir.png" alt="placeholder icon" /></a>
+                                                  
                         
                     </td>
 			  </tr>
@@ -54,20 +54,19 @@
 		  </c:when>
 		  <c:when test="${ata.id % 2 != 0}">
 		           <tr class="trow">
-			     <td>${ata.id}</td>
-		                     <td><input type="date" value="${ata.data}"></td>
+			    	     <td>${ata.id}</td>
+		           <td><input type="date" value="${ata.data}"></td>
 				    <td>${ata.reuniao}</td>
-<%-- 		                     <td>${vereador.email}</td> --%>
-<%-- 		                    <td>${vereador.hora}</td> --%>
-<%-- 		                      <td>${vereador.presidente}</td> --%>
-<%-- 		                     	<td>${vereador.primeirosecretario}</td> --%>
+		                     <td>${ata.status}</td>
+		                    <td>${ata.responsavel}</td>
+		                      <td>${ata.isAtivo}</td>
 			     <td class="options-width">
 			        
 			     
-                        <a href="edicao?id=${ata.id}" title="Edit"><img src="${pageContext.request.contextPath}/resources/images/visualizar.png" alt="X"/></a>
-                        <a href="/delete?id=${ata.id}"  title="aaa"><img src="${pageContext.request.contextPath}/resources/images/editar.png" alt="placeholder icon" /></a>
-                         <a href="/edit?id=${ata.id}" title="bbb"><img src="${pageContext.request.contextPath}/resources/images/excluir.png" alt="placeholder icon" /></a>
-                                               
+                        <a href="${pageContext.request.contextPath}/ata/visualizacao?id=${ata.id}" title="Edit"><img src="${pageContext.request.contextPath}/resources/images/visualizar.png" alt="X"/></a>
+                        <a href="${pageContext.request.contextPath}/ata/editar?id=${ata.id}"  title="aaa"><img src="${pageContext.request.contextPath}/resources/images/editar.png" alt="placeholder icon" /></a>
+                         <a href="${pageContext.request.contextPath}/ata/delete?id=${ata.id}" title="bbb"><img src="${pageContext.request.contextPath}/resources/images/excluir.png" alt="placeholder icon" /></a>
+                                              
                         
                     </td>
 			  </tr>
@@ -85,10 +84,8 @@
 
 <div class="window" id="cadastro">
     <a href="#" class="fechar"><img alt="" src="${pageContext.request.contextPath}/resources/images/exitt.png"></a>
-   <h2> Cadastro Atas </h2> 
-<div id="form"> 
- 
- <form id="formAtas" action="add" method="POST">
+
+<form id="ds" class="form-labels-on-top"action="${pageContext.request.contextPath}/ata/add"  method="POST">
  
  
  
@@ -131,47 +128,88 @@
 <!-- 			</fieldset> -->
 			
 			
-	<fieldset>
 		
-		<legend>Dados da Ata</legend>
+		
+			<div class="form-row">
+				   <label>
+				  	<span>Ativo?</span>
+						<input id="isAtivo" name="isAtivo" type="checkbox" checked="checked"/>
+					</label>
+			 </div>
+			 
+			 
+			 
+			  <div class="form-row">
+				   <label>
+				  	<span>Id Ata</span>
+						<input id="id" name="id" type="number" value="${ata.id}"/>
+					</label>
+			 </div>
+			 
+		
+			 
+		 	  
+		 	  <div class="form-row">
+			   		<label>
+			  		<span>Data</span>
+						<input id="data" name="data" type="text" value="${ata.data}" />
+					</label>
+		 	 </div>
+			
 
-			<p>Id 
-				<input id="id" name="id" type="text" readonly="readonly"/>
-			</p>
 			
-			<p>Data
-				<input id="data" name="data" type="text" />
-			</p>
-<!-- 			<p>Telefone -->
-<!-- 				<input id="telefone" name="telefone" type="text" /> -->
-<!-- 			</p> -->
+			<div class="form-row">
+                <label>
+                    <span>Reuniao</span>
+	                    <select id="reuniao"name="reuniao">
+	                                  <optgroup label="Escolha a Reuniao">
+		           			<c:forEach var="reuniao" items="${reuniaoList}">
+		           			
+		           				<option value="${reuniao.id}">${reuniao.numero}</option>
+		           				      				
+		           				
+		       				</c:forEach>
+		                </optgroup>
+	                    </select>
+<!--                     		<button type="reset" >Add</button> -->
+                    
+                </label>
+            </div>
+		 	 
+		 	 			<div class="form-row">
+			   		<label>
+			  		<span>Status</span>
+						<input id="status" name="status" type="text"  value="${ata.status}"/>					
+					</label>
+		 	 </div>
 			
-           
-<!-- 			<p>Email -->
-<!-- 				<input id="email" name="email" type="text" /> -->
-<!-- 			</p> -->
-			<p>Reunião
-				<input id="reuniao" name="reuniao" type="text" />
-			</p>
+	 			<div class="form-row">
+			   		<label>
+			  		<span>Responsavel</span>
+						<input id="responsavel" name="responsavel" type="text"  value="${ata.responsavel}"/>					
+					</label>
+		 	 </div>
+	
 			
 			<div id="botoes">
 				<button class="button">Adicionar</button>
 				<button class="button">Apagar</button>
+		 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
+				
 			</div>
 			
-	</fieldset>
+
 				
 
 				
 
 </form>
+
 </div>
 </div>
     
     <div id="mascara"></div>
     
-    
-</div>
 
 
 

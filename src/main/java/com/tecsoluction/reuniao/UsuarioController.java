@@ -50,6 +50,7 @@ public class UsuarioController {
 	
 	private Set<Usuario> setUsuarios;
 	
+	
 	@Autowired
 	private RoleServicoImpl roleService;
 	
@@ -66,6 +67,23 @@ public class UsuarioController {
 
         });
         
+  }
+  
+  
+  @RequestMapping(value = "/cadastrar", method = RequestMethod.GET)
+  public ModelAndView CadastrarUsuarioForm(HttpServletRequest request, Usuario usuario) {
+
+  	  Usuario usuarionew = new Usuario();     
+      
+      roles = roleService.getRoleDao().todos();
+
+      ModelAndView cadastrar = new ModelAndView("cadastrarusuario");
+      cadastrar.addObject("usuario", usuarionew);
+      cadastrar.addObject("roleList", roles);
+
+      
+
+      return  cadastrar;
   }
 	
     @RequestMapping(value = "movimentacao", method = RequestMethod.GET)
@@ -91,6 +109,10 @@ public class UsuarioController {
     public String AddUsuario(@ModelAttribute ("usuario") Usuario usuario, BindingResult bindingResult, Model model) {
        
     	logger.info("Adicionando Usuario! .", usuario.getUserName());
+    	
+    	
+    	
+//    	usuario.setRoles(usuario.getRoles());
     	
     	usuarioServico.getUsuarioDao().atualizar(usuario);
 
@@ -173,38 +195,6 @@ public class UsuarioController {
 
         return  visualizacao;
     }
-	
-	
-	
-	
-	
-	
-	
-	
-//	private UsuarioDao usuarioDao;
-//	
-//	
-//	
-//	@Autowired
-//	public UsuarioController(UsuarioDao dao) {
-//		super("ata");
-//		this.usuarioDao = dao;
-//		
-//		
-//	}
-//
-//
-//
-//	@Override
-//	protected UsuarioDao getDao() {
-//		// TODO Auto-generated method stub
-//		return usuarioDao;
-//	}
-
-
-
-
-	
 	
 
  

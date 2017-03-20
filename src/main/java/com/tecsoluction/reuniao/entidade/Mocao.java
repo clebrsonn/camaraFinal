@@ -54,7 +54,8 @@ public class Mocao implements Serializable {
 		private boolean isAtivo;
 		
 		
-		
+		@ManyToOne
+ 		private Expediente expediente;
 		
 		
 		public long getId() {
@@ -115,6 +116,12 @@ public class Mocao implements Serializable {
  	        this.homenageado = homenageado;
  	    }
  	
- 		
+ 		public Expediente getExpediente() {
+ 	        return this.expediente;
+ 	    }
+
+ 		public void setExpediente(Expediente exp) {
+ 	        this.expediente = exp;
+ 	    }	
 
 }

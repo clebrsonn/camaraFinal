@@ -47,7 +47,19 @@ public class VereadoresController {
 	
 	
 
-	
+	  @RequestMapping(value = "/cadastrar", method = RequestMethod.GET)
+	  public ModelAndView CadastrarVereadorForm(HttpServletRequest request, Vereador vereador) {
+
+		  Vereador vereadornew = new Vereador();     
+	      
+
+	      ModelAndView cadastrar = new ModelAndView("cadastrarvereador");
+	      cadastrar.addObject("vereador", vereadornew);
+
+	      
+
+	      return  cadastrar;
+	  }
 
 	
 	   @RequestMapping(value = "/movimentacao", method = RequestMethod.GET)
@@ -67,13 +79,13 @@ public class VereadoresController {
 	    }
 	   
 	    
-	    @RequestMapping(value = "/add", method = RequestMethod.GET)
+	    @RequestMapping(value = "/add", method = RequestMethod.POST)
 	    public String AddVereador(@ModelAttribute ("vereador") Vereador vereador) {
 	       
 	    	logger.info("Adicionando Vereador! .", vereador.getNome());
 	    	
 
-	    	vereadorServico.getVereadorDao().salvar(vereador);
+	    	vereadorServico.getVereadorDao().atualizar(vereador);
 	        
 
 	        return "redirect:movimentacao" ;

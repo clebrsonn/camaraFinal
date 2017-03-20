@@ -27,11 +27,7 @@ public class ReuniaoServicoImpl implements ReuniaoService {
 		this.reuniaoDao = reuniaoDao;
 	}
 
-	@Override
-	public Vereador buscaVereadorPor(String login, String senha) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+
 	
 	
 

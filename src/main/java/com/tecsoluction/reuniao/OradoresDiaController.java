@@ -26,6 +26,7 @@ import com.tecsoluction.reuniao.dao.ReuniaoDao;
 import com.tecsoluction.reuniao.entidade.Ata;
 import com.tecsoluction.reuniao.entidade.OradoresDia;
 import com.tecsoluction.reuniao.entidade.OradoresDia;
+import com.tecsoluction.reuniao.entidade.OradoresDia;
 import com.tecsoluction.reuniao.entidade.Reuniao;
 import com.tecsoluction.reuniao.framework.AbstractController;
 import com.tecsoluction.reuniao.servicos.impl.OradoresDiaServicoImpl;
@@ -64,6 +65,25 @@ public class OradoresDiaController {
 	        });
 	        
 	  }
+	  
+	  
+	  
+		 @RequestMapping(value = "/cadastrar", method = RequestMethod.GET)
+		  public ModelAndView CadastrarOradoresDiaForm(HttpServletRequest request, OradoresDia oradoresdia) {
+
+			  OradoresDia oradoresdianew = new OradoresDia();     
+		      
+		       reunioes = reuniaoServico.getReuniaoDao().todos();
+
+		      ModelAndView cadastrar = new ModelAndView("cadastraroradoresdia");
+		      cadastrar.addObject("oradoresdia", oradoresdianew);
+		      cadastrar.addObject("reuniaoList", reunioes);
+
+		      
+
+		      return  cadastrar;
+		      
+		 }
 	
 	 @RequestMapping(value = "/movimentacao", method = RequestMethod.GET)
 	    public ModelAndView MovimentacaoOradoresDia() {

@@ -23,6 +23,7 @@ import com.tecsoluction.reuniao.dao.MocaoDao;
 import com.tecsoluction.reuniao.dao.ReuniaoDao;
 import com.tecsoluction.reuniao.entidade.Ata;
 import com.tecsoluction.reuniao.entidade.Mocao;
+import com.tecsoluction.reuniao.entidade.Mocao;
 import com.tecsoluction.reuniao.entidade.Requerimento;
 import com.tecsoluction.reuniao.entidade.Reuniao;
 import com.tecsoluction.reuniao.framework.AbstractController;
@@ -46,6 +47,25 @@ public class MocaoController  {
 	
 	private List<Mocao> mocoes;
 
+	
+	
+	
+	 @RequestMapping(value = "/cadastrar", method = RequestMethod.GET)
+	  public ModelAndView CadastrarMocaoForm(HttpServletRequest request, Mocao mocao) {
+
+		  Mocao mocaonew = new Mocao();     
+	      
+
+	      ModelAndView cadastrar = new ModelAndView("cadastrarmocao");
+	      cadastrar.addObject("mocao", mocaonew);
+
+	      
+
+	      return  cadastrar;
+	      
+	 }
+	
+	
 	
 	
 	 @RequestMapping(value = "/movimentacao", method = RequestMethod.GET)

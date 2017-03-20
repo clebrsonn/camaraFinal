@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.tecsoluction.reuniao.aplicacao.ContextoAplicacao;
 import com.tecsoluction.reuniao.entidade.Usuario;
 import com.tecsoluction.reuniao.framework.AbstractController;
 import com.tecsoluction.reuniao.servicos.impl.UsuarioServicoImpl;
@@ -49,7 +50,7 @@ public class LoginController  {
     
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public ModelAndView Autenticacao(String username,  String senha) {
+    public ModelAndView Autenticacao(String username,  String senha, Model model) {
 //
     		Usuario usuario = usuarioServico.buscaPorLoginESenha(username, senha);
 //    		
@@ -62,6 +63,9 @@ public class LoginController  {
 ////    			usuario.setUltimoLogin(new Date());
 ////    			UsuarioDaoImpl.persistir(usuario);
 ////    			sessao.setAttribute("usuario", usuario);
+    			
+    			ContextoAplicacao ct = new ContextoAplicacao(usuarioServico);
+    			ct.addAttributes(model);
 //
     			ModelAndView mv = new  ModelAndView("home");
     			mv.addObject("usuario", usuario);

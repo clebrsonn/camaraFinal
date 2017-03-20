@@ -2,7 +2,7 @@
 <%@ page session="false" %>
 
 <div id="conteudo"  class="conteudo">
-<h2> Editar Reunião </h2> 
+<h2> Visualização Reunião </h2> 
  			<form id="ds" class="form-labels-on-top" action="${pageContext.request.contextPath}/reuniao/add"
 				ModelAttribute="reuniao" method="POST">
 
