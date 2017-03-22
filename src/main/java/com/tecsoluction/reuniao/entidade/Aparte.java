@@ -6,14 +6,13 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
-import java.util.List;
 
 
 @Entity
-@Table(name = "ORADORESDIA")
+@Table(name = "APARTE")
 @Data
 @NoArgsConstructor
-public class OradoresDia implements Serializable {
+public class Aparte implements Serializable {
 
     /**
      *
@@ -31,14 +30,22 @@ public class OradoresDia implements Serializable {
     @Column(name = "DATA")
     private Date data;
 
-    @OneToOne
-    private Reuniao reuniao;
+    
+    private String nome;
+
+    /**
+     */
+    
+    private String discursoaparte;
+
+    /**
+     */
+    @ManyToOne
+    private Orador orador;
+
     
     
     private boolean isAtivo;
-    
-    @OneToMany
-    private List<Orador> oradores;
 
 
     public long getId() {
@@ -69,12 +76,20 @@ public class OradoresDia implements Serializable {
 	}
 	
 
-	public Reuniao getReuniao() {
-        return this.reuniao;
+	public String getNome() {
+        return this.nome;
     }
 
-	public void setReuniao(Reuniao reuniao) {
-        this.reuniao = reuniao;
+	public void setNome(String nome) {
+        this.nome = nome;
+    }
+	
+	public String getDiscursoAparte() {
+        return this.discursoaparte;
+    }
+
+	public void setDiscursoAparte(String discurso) {
+        this.discursoaparte = discurso;
     }
 
 }

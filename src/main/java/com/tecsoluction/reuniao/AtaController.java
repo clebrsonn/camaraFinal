@@ -19,6 +19,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.tecsoluction.reuniao.entidade.Ata;
 import com.tecsoluction.reuniao.entidade.Reuniao;
+import com.tecsoluction.reuniao.poi.WordPoi;
 import com.tecsoluction.reuniao.servicos.impl.AtaServicoImpl;
 import com.tecsoluction.reuniao.servicos.impl.ReuniaoServicoImpl;
 
@@ -154,7 +155,31 @@ public class AtaController  {
 
 	        return  visualizacao;
 	    }
+	    
+	    
+	    @RequestMapping(value = "/converter", method = RequestMethod.GET)
+	    public ModelAndView ConverterAta(HttpServletRequest request, Ata ata) {
 
+//	    	Ata atavis = new Ata();
+	        Long idf = Long.parseLong(request.getParameter("id"));
+
+//	        atavis =ataServico.getAtaDao().pesquisarPorId(idf);
+	        
+//	        
+//	        ModelAndView visualizacao = new ModelAndView("visualizacaoata");
+//	        visualizacao.addObject("ata", atavis);
+	        
+	        // primeiro parametro arquivo de modelo com as tags na máquina local
+	        // segundo parametro onde será salvo o documento gerado
+	        WordPoi word = new WordPoi("c://ata.doc","C://Users//winds//Documents//atareplace.doc");
+	         word.replaceTag("NOME", "WINDSON");
+	         word.replaceTag("CPF", "963-289-594-00");
+	         word.write();
+
+	        
+
+	        return  MovimentacaoAta();
+	    }
 	
 	
 }

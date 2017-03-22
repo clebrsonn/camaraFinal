@@ -48,6 +48,12 @@
     <definition name="cadastrarusuario" extends="defaultTemplate">
         <put-attribute name="conteudo" value="/WEB-INF/views/jsp/cadastrar/cadastrarusuario.jsp"/>
     </definition>
+        <definition name="cadastraraparte" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/cadastrar/cadastraraparte.jsp"/>
+    </definition>
+        <definition name="cadastrarorador" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/cadastrar/cadastrarorador.jsp"/>
+    </definition>
 
 
     <definition name="cadastrarvereador" extends="defaultTemplate">
@@ -293,7 +299,20 @@
         <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>
 
     </definition>
+    
+        <definition name="movimentacaoaparte" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/movimentacao/movimentacaoaparte.jsp"/>
+        <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>
 
+    </definition>
+
+  
+    
+        <definition name="movimentacaoorador" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/movimentacao/movimentacaoorador.jsp"/>
+        <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>
+
+    </definition>
 
     <definition name="movimentacaoproduto" extends="defaultTemplate">
         <put-attribute name="conteudo" value="/WEB-INF/views/jsp/movimentacao/movimentacaoproduto.jsp"/>
@@ -523,6 +542,14 @@
             <definition name="editarata" extends="defaultTemplate">
         <put-attribute name="conteudo" value="/WEB-INF/views/jsp/editar/editarata.jsp"/>
     </definition>
+    
+           <definition name="editaraparte" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/editar/editaraparte.jsp"/>
+    </definition>
+    
+           <definition name="editarorador" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/editar/editarorador.jsp"/>
+    </definition>
 
     <definition name="edicaogarcon" extends="defaultTemplate">
         <put-attribute name="conteudo" value="/WEB-INF/views/jsp/edicao/edicaogarcon.jsp"/>
@@ -708,6 +735,14 @@
     
              <definition name="visualizacaoata" extends="defaultTemplate">
         <put-attribute name="conteudo" value="/WEB-INF/views/jsp/visualizacao/visualizacaoata.jsp"/>
+    </definition>
+    
+               <definition name="visualizacaoaparte" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/visualizacao/visualizacaoaparte.jsp"/>
+    </definition>
+    
+               <definition name="visualizacaoorador" extends="defaultTemplate">
+        <put-attribute name="conteudo" value="/WEB-INF/views/jsp/visualizacao/visualizacaoorador.jsp"/>
     </definition>
 
 </tiles-definitions>

@@ -3,13 +3,15 @@
 <div id="menulateral">
 
 		<img alt="user"
-			src="${pageContext.request.contextPath}/resources/images/usu2.png"/>
+			src="${pageContext.request.contextPath}/resources/images/user_cicle.png"/>
+			</br>
+			</br>
   			
-<h3 class="link-titulo">	<label>${usuarioAtt.userName}</label></h3>
+<h2 class="linkh-titulo">${usuarioAtt.userName}</h2>
     <ul class="box">					
         <li><a href="#">ROLES - <label>${usuarioAtt.roles}</label></a></li>
-        <li><a href="${pageContext.request.contextPath}/resources/images/">DESTIVAR BARRA LATERAL</a></li>
-<!--         <li ><a href="#">Editor CSS do DWMX 2004</a></li> -->
+        <li id="dessativar"><a id="desativar" href="#">DESTIVAR BARRA LATERAL</a></li>
+        <li ><a href="#">MUDAR USUARIO E SENHA</a></li>
 <!--         <li ><a href="#">Aprenda CSS desde o início</a></li> -->
     </ul>
 

@@ -86,11 +86,9 @@
 // 	});
 
 
-// $(".button").click(function () {
-//  $("#sForm").toggleClass("open");   
 
-
-// });
+ 
+ 
 
 // $(".controlTd").click(function () {
 //  $(this).children(".settingsIcons").toggleClass("display"); 
@@ -185,6 +183,42 @@ $(document).ready(function(){
         }
        
     </script>
+    
+    
+    <script>
+  function startDictation() {
+
+    if (window.hasOwnProperty('webkitSpeechRecognition')) {
+
+      var recognition = new webkitSpeechRecognition();
+
+      recognition.continuous = false;
+      recognition.interimResults = false;
+
+      recognition.lang = "pt-BR";
+      recognition.start();
+
+      recognition.onresult = function(e) {
+        document.getElementById('transcript').value
+                                 = e.results[0][0].transcript;
+        recognition.stop();
+       // document.getElementById('labnol').submit();
+      };
+
+      recognition.onerror = function(e) {
+        recognition.stop();
+      }
+
+    }
+    
+    $("#desativar").click(function () {
+    	  $("#menulateral").hide();  
+    	  alert("removendo...")
+
+
+    	 });
+  }
+</script>
  	
  
 </head>

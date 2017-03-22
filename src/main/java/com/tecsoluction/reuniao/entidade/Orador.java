@@ -10,10 +10,10 @@ import java.util.List;
 
 
 @Entity
-@Table(name = "ORADORESDIA")
+@Table(name = "ORADOR")
 @Data
 @NoArgsConstructor
-public class OradoresDia implements Serializable {
+public class Orador implements Serializable {
 
     /**
      *
@@ -32,13 +32,16 @@ public class OradoresDia implements Serializable {
     private Date data;
 
     @OneToOne
-    private Reuniao reuniao;
+    private OradoresDia oradoresdia;
+    
+    @OneToMany
+    private List<Aparte> apartes;
+    
+    
+    private Vereador vereador;
     
     
     private boolean isAtivo;
-    
-    @OneToMany
-    private List<Orador> oradores;
 
 
     public long getId() {
@@ -69,12 +72,20 @@ public class OradoresDia implements Serializable {
 	}
 	
 
-	public Reuniao getReuniao() {
-        return this.reuniao;
+	public OradoresDia getOradoresDia() {
+        return this.oradoresdia;
     }
 
-	public void setReuniao(Reuniao reuniao) {
-        this.reuniao = reuniao;
+	public void setOradoresDia(OradoresDia ora) {
+        this.oradoresdia = ora;
+    }
+	
+	public Vereador getVereador() {
+        return this.vereador;
+    }
+
+	public void setVereador(Vereador vereador) {
+        this.vereador = vereador;
     }
 
 }

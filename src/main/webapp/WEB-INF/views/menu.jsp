@@ -27,11 +27,19 @@
 	<li class="switch"><label onclick="" for="css3menu-switcher"></label></li>
 	<li class="topfirst"><a href="${pageContext.request.contextPath}/ata/movimentacao" ><img alt="" src="${pageContext.request.contextPath}/resources/images/ata.png">ATAS</a></li>
 	<li class="topmenu"><a href="${pageContext.request.contextPath}/expediente/movimentacao"><img alt="" src="${pageContext.request.contextPath}/resources/images/expediente.png">EXPEDIENTE</a></li>
-	<li class="topmenu"><a href="${pageContext.request.contextPath}/oradoresdia/movimentacao"><img alt="" src="${pageContext.request.contextPath}/resources/images/oradoresdia.png">ORADORES DIA</a></li>
-<%-- 	<li class="topmenu"><a href="${pageContext.request.contextPath}/movimentacao"><img alt="" src="${pageContext.request.contextPath}/resources/images/delete.png">MOCÃO</a></li> --%>
+	<li class="topmenu"><a href="${pageContext.request.contextPath}/oradoresdia/movimentacao"><img alt="" src="${pageContext.request.contextPath}/resources/images/oradoresdia.png">ORADORES INSC</a>
+	
+	      <ul class="sub-menu">
+        <li><a href="${pageContext.request.contextPath}/orador/movimentacao">ORADORES</a></li>
+        <li><a href="${pageContext.request.contextPath}/aparte/movimentacao">APARTES</a></li>
+<!--         <li><a href="#">Item</a></li> -->
+<!--         <li><a href="#">Item</a></li> -->
+      </ul>
+	</li>
+<%-- 	<ul><li><a href="${pageContext.request.contextPath}/movimentacao"><img alt="" src="${pageContext.request.contextPath}/resources/images/delete.png">MOCÃO</a></li> </ul> --%>
 <%-- 	<li class="topmenu"><a href="${pageContext.request.contextPath}/movimentacao" ><img alt="" src="${pageContext.request.contextPath}/resources/images/delete.png">ORDEM DIA</a></li> --%>
 	<li class="topmenu"><a href="${pageContext.request.contextPath}/ordemdia/movimentacao" ><img alt="" src="${pageContext.request.contextPath}/resources/images/ordemdia.png">ORDEM DIA</a></li>
-	<li class="topmenu"><a href="${pageContext.request.contextPath}/projetolei/movimentacao"><img alt="" src="${pageContext.request.contextPath}/resources/images/projetolei.png">PROJETO DE LEI</a></li>
+	<li class="topmenu"><a href="${pageContext.request.contextPath}/projetolei/movimentacao"><img alt="" src="${pageContext.request.contextPath}/resources/images/projetolei.png">PROJETO LEI</a></li>
 	<li class="topmenu"><a href="${pageContext.request.contextPath}/requerimento/movimentacao"><img alt="" src="${pageContext.request.contextPath}/resources/images/requerimento.png">REQUERIMENTO</a></li>
 		<li class="topmenu"><a href="${pageContext.request.contextPath}/mocao/movimentacao"><img alt="" src="${pageContext.request.contextPath}/resources/images/mocao.png">MOCÃO</a></li>
 	<li class="topmenu"><a href="${pageContext.request.contextPath}/reuniao/movimentacao"><img alt="" src="${pageContext.request.contextPath}/resources/images/reuniao.png">REUNIÃO</a></li>

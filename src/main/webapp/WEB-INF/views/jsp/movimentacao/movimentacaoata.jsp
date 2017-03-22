@@ -10,7 +10,7 @@
 				    <td class="titleTd">Atas</td>
 				       <td class="search"> <input type="text"></td>
 				    <td colspan="4"></td>
-				    <td><a href="#cadastro" rel="modal" ><img src="${pageContext.request.contextPath}/resources/images/add.png"></div></a></td>
+				    <td><a href="#cadastro" rel="modal" ><img src="${pageContext.request.contextPath}/resources/images/add.png"></a></td>
   				</tr>
   				
   				 <tr class="headingTr">
@@ -48,7 +48,7 @@
                          <a href="${pageContext.request.contextPath}/ata/delete?id=${ata.id}" title="bbb"><img src="${pageContext.request.contextPath}/resources/images/excluir.png" alt="placeholder icon" /></a>
                           
                           											<a
-							href="${pageContext.request.contextPath}/reuniao/tocar?id=${reuniao.id}"
+							href="${pageContext.request.contextPath}/ata/converter?id=${reuniao.id}"
 							title="bbb">
 							
 							<img
@@ -103,124 +103,131 @@
 <div class="window" id="cadastro">
     <a href="#" class="fechar"><img alt="" src="${pageContext.request.contextPath}/resources/images/exitt.png"></a>
 
-<form id="ds" class="form-labels-on-top"action="${pageContext.request.contextPath}/ata/add"  method="POST">
+<%-- <form id="ds" class="form-labels-on-top"action="${pageContext.request.contextPath}/ata/add"  method="POST"> --%>
  
  
  
-   <!-- 				DADOS DO REGISTRO DIVIDIDOS EM DOIS PARAGRAFOS	 -->
+<!--    <!-- 				DADOS DO REGISTRO DIVIDIDOS EM DOIS PARAGRAFOS	 --> -->
 			
-<!-- 			<fieldset> -->
+<!-- <!-- 			<fieldset> --> -->
 				
-<!-- 				<legend>Dados do Registro</legend> -->
+<!-- <!-- 				<legend>Dados do Registro</legend> --> -->
 			
 			
-<!-- 				<p>Data Criacao: -->
-<!-- 					<input name="datacriacao" type="date" class="inp-form" /> -->
-<%-- 					<fmt:formatDate type="date"  value="${registro.data}" pattern="dd/MM/yyyy"/> --%>
+<!-- <!-- 				<p>Data Criacao: --> -->
+<!-- <!-- 					<input name="datacriacao" type="date" class="inp-form" /> --> -->
+<%-- <%-- 					<fmt:formatDate type="date"  value="${registro.data}" pattern="dd/MM/yyyy"/> --%> --%>
 				
 				
-<!-- 				Usuario Criou: -->
-<!-- 				<input name="usuario" type="date" class="inp-form" /> -->
-<%-- 				<fmt:formatDate type="date"  value="${registro.usuario}" pattern="dd/MM/yyyy"/> --%>
+<!-- <!-- 				Usuario Criou: --> -->
+<!-- <!-- 				<input name="usuario" type="date" class="inp-form" /> --> -->
+<%-- <%-- 				<fmt:formatDate type="date"  value="${registro.usuario}" pattern="dd/MM/yyyy"/> --%> --%>
 				
 			
-<!-- 				Data Ultima Modificacao: -->
-<!-- 				<input name="datamodificacao" type="date" class="inp-form" /> -->
-<%-- 				<fmt:formatDate type="date"  value="${registro.datamodificacao}" pattern="dd/MM/yyyy"/> --%>
+<!-- <!-- 				Data Ultima Modificacao: --> -->
+<!-- <!-- 				<input name="datamodificacao" type="date" class="inp-form" /> --> -->
+<%-- <%-- 				<fmt:formatDate type="date"  value="${registro.datamodificacao}" pattern="dd/MM/yyyy"/> --%> --%>
 				
-<!-- 				</p> -->
+<!-- <!-- 				</p> --> -->
 				
-<!-- 				<p> -->
+<!-- <!-- 				<p> --> -->
 				
-<!-- 				Usuario Modificou: -->
-<!-- 				<input name="usuario" type="text" class="inp-form"/> -->
-<%-- 				<fmt:formatDate type="date"  value="${registro.usuario}" pattern="dd/MM/yyyy"/> --%>
+<!-- <!-- 				Usuario Modificou: --> -->
+<!-- <!-- 				<input name="usuario" type="text" class="inp-form"/> --> -->
+<%-- <%-- 				<fmt:formatDate type="date"  value="${registro.usuario}" pattern="dd/MM/yyyy"/> --%> --%>
 				
 				
-<!-- 				Status: -->
-<!-- 				<input name="status" type="text" class="inp-form" /> -->
-<%-- 				<fmt:formatDate type="date"  value="${registro.status}" pattern="dd/MM/yyyy"/> --%>
+<!-- <!-- 				Status: --> -->
+<!-- <!-- 				<input name="status" type="text" class="inp-form" /> --> -->
+<%-- <%-- 				<fmt:formatDate type="date"  value="${registro.status}" pattern="dd/MM/yyyy"/> --%> --%>
 				
-<!-- 			</p> -->
+<!-- <!-- 			</p> --> -->
 			
-<!-- 			</fieldset> -->
+<!-- <!-- 			</fieldset> --> -->
 			
 			
 		
 		
-			<div class="form-row">
-				   <label>
-				  	<span>Ativo?</span>
-						<input id="isAtivo" name="isAtivo" type="checkbox" checked="checked"/>
-					</label>
-			 </div>
+<!-- 			<div class="form-row"> -->
+<!-- 				   <label> -->
+<!-- 				  	<span>Ativo?</span> -->
+<!-- 						<input id="isAtivo" name="isAtivo" type="checkbox" checked="checked"/> -->
+<!-- 					</label> -->
+<!-- 			 </div> -->
 			 
 			 
 			 
-			  <div class="form-row">
-				   <label>
-				  	<span>Id Ata</span>
-						<input id="id" name="id" type="number" value="${ata.id}"/>
-					</label>
-			 </div>
+<!-- 			  <div class="form-row"> -->
+<!-- 				   <label> -->
+<!-- 				  	<span>Id Ata</span> -->
+<%-- 						<input id="id" name="id" type="number" value="${ata.id}"/> --%>
+<!-- 					</label> -->
+<!-- 			 </div> -->
 			 
 		
 			 
 		 	  
-		 	  <div class="form-row">
-			   		<label>
-			  		<span>Data</span>
-						<input id="data" name="data" type="text" value="${ata.data}" />
-					</label>
-		 	 </div>
+<!-- 		 	  <div class="form-row"> -->
+<!-- 			   		<label> -->
+<!-- 			  		<span>Data</span> -->
+<%-- 						<input id="data" name="data" type="text" value="${ata.data}" /> --%>
+<!-- 					</label> -->
+<!-- 		 	 </div> -->
 			
 
 			
-			<div class="form-row">
-                <label>
-                    <span>Reuniao</span>
-	                    <select id="reuniao"name="reuniao">
-	                                  <optgroup label="Escolha a Reuniao">
-		           			<c:forEach var="reuniao" items="${reuniaoList}">
+<!-- 			<div class="form-row"> -->
+<!--                 <label> -->
+<!--                     <span>Reuniao</span> -->
+<!-- 	                    <select id="reuniao"name="reuniao"> -->
+<!-- 	                                  <optgroup label="Escolha a Reuniao"> -->
+<%-- 		           			<c:forEach var="reuniao" items="${reuniaoList}"> --%>
 		           			
-		           				<option value="${reuniao.id}">${reuniao.numero}</option>
+<%-- 		           				<option value="${reuniao.id}">${reuniao.numero}</option> --%>
 		           				      				
 		           				
-		       				</c:forEach>
-		                </optgroup>
-	                    </select>
-<!--                     		<button type="reset" >Add</button> -->
+<%-- 		       				</c:forEach> --%>
+<!-- 		                </optgroup> -->
+<!-- 	                    </select> -->
+<!-- <!--                     		<button type="reset" >Add</button> --> -->
                     
-                </label>
-            </div>
+<!--                 </label> -->
+<!--             </div> -->
 		 	 
-		 	 			<div class="form-row">
-			   		<label>
-			  		<span>Status</span>
-						<input id="status" name="status" type="text"  value="${ata.status}"/>					
-					</label>
-		 	 </div>
+<!-- 		 	 			<div class="form-row"> -->
+<!-- 			   		<label> -->
+<!-- 			  		<span>Status</span> -->
+<%-- 						<input id="status" name="status" type="text"  value="${ata.status}"/>					 --%>
+<!-- 					</label> -->
+<!-- 		 	 </div> -->
 			
-	 			<div class="form-row">
-			   		<label>
-			  		<span>Responsavel</span>
-						<input id="responsavel" name="responsavel" type="text"  value="${ata.responsavel}"/>					
-					</label>
-		 	 </div>
+<!-- 	 			<div class="form-row"> -->
+<!-- 			   		<label> -->
+<!-- 			  		<span>Responsavel</span> -->
+<%-- 						<input id="responsavel" name="responsavel" type="text"  value="${ata.responsavel}"/>					 --%>
+<!-- 					</label> -->
+<!-- 		 	 </div> -->
 	
 			
-			<div id="botoes">
-				<button class="button">Adicionar</button>
-				<button class="button">Apagar</button>
-		 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
+<!-- 			<div id="botoes"> -->
+<!-- 				<button class="button">Adicionar</button> -->
+<!-- 				<button class="button">Apagar</button> -->
+<%-- 		 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"> --%>
 				
-			</div>
+<!-- 			</div> -->
 			
 
 				
 
 				
 
+<!-- </form> -->
+
+<form id="labnol" method="get" >
+  <div class="speech">
+    <input type="text" name="q" id="transcript" placeholder="Speak" />
+    <img onclick="startDictation()" src="//i.imgur.com/cHidSVu.gif" />
+  </div>
 </form>
 
 </div>

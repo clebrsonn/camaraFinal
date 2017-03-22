@@ -287,6 +287,34 @@
   
   </bean>
   
+          <bean id="oradorDao"
+		class="com.tecsoluction.reuniao.dao.impl.OradorDaoImpl"
+		scope="request"
+		>
+  
+  </bean>
+  
+    <bean id="oradorService"
+		class="com.tecsoluction.reuniao.servicos.impl.OradorServicoImpl"
+		scope="request"
+		>
+  
+  </bean>
+  
+            <bean id="aparteDao"
+		class="com.tecsoluction.reuniao.dao.impl.AparteDaoImpl"
+		scope="request"
+		>
+  
+  </bean>
+  
+    <bean id="aparteService"
+		class="com.tecsoluction.reuniao.servicos.impl.AparteServicoImpl"
+		scope="request"
+		>
+  
+  </bean>
+  
 
 
     <jpa:repositories base-package="com.tecsoluction.reuniao.dao"/>

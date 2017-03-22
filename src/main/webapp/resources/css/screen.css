@@ -235,6 +235,15 @@ left:100%;
 	color:rgb(255,255,255);
 	border-bottom: 4px solid rgb(155,155,155);
 	}
+	
+	#lateral h2 {
+	display:inline-block;
+	font-weight:bold;
+	font-size:1em;
+	font-style:normal;
+	
+	color:rgb(255,255,255);
+	}
 #menulateral {
 	font-style:italic;
 	position:relative;
