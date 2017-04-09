@@ -47,6 +47,8 @@ public class Aparte implements Serializable {
     
     private boolean isAtivo;
 
+    
+    
 
     public long getId() {
         return this.id;

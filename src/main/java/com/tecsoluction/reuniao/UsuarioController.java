@@ -1,7 +1,6 @@
 package com.tecsoluction.reuniao;
 
 import java.util.List;
-import java.util.Set;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -10,7 +9,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.ServletRequestDataBinder;
@@ -22,11 +20,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.tecsoluction.reuniao.entidade.Role;
 import com.tecsoluction.reuniao.entidade.Usuario;
-import com.tecsoluction.reuniao.entidade.Vereador;
-import com.tecsoluction.reuniao.servicos.UsuarioService;
 import com.tecsoluction.reuniao.servicos.impl.RoleServicoImpl;
 import com.tecsoluction.reuniao.servicos.impl.UsuarioServicoImpl;
-import com.tecsoluction.reuniao.validator.UsuarioValidador;
 
 /**
  * Handles requests for the application home page.
@@ -42,13 +37,13 @@ public class UsuarioController {
 	@Autowired
 	private UsuarioServicoImpl usuarioServico;
 	
-	@Autowired
-	private UsuarioValidador usuarioValidador;
-	
+//	@Autowired
+//	private UsuarioValidador usuarioValidador;
+//	
 	
 	private List<Usuario> usuarios;
 	
-	private Set<Usuario> setUsuarios;
+//	private Set<Usuario> setUsuarios;
 	
 	
 	@Autowired
@@ -56,7 +51,7 @@ public class UsuarioController {
 	
 	private List<Role> roles;
 
-	private Set<Role> setRoles;
+//	private Set<Role> setRoles;
 	
 	
 	
@@ -168,7 +163,7 @@ public class UsuarioController {
     public ModelAndView editarEntity(HttpServletRequest request, Usuario usuario) {
 
 
-        Long idf = Long.parseLong(request.getParameter("id"));
+        //Long idf = Long.parseLong(request.getParameter("id"));
 
         usuarioServico.getUsuarioDao().atualizar(usuario);
         

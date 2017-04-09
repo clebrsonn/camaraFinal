@@ -72,7 +72,7 @@
 <%-- 								src="${pageContext.request.contextPath}/resources/images/play3.png" --%>
 <!-- 								alt="placeholder icon" />	 -->
 								
-								<audio src="${pageContext.request.contextPath}/resources/audio/audio.mp3" controls="controls">
+								<audio src="${pageContext.request.contextPath}/resources/audio/Cópia de Gravação da ata Nº01  em 02-02-2015.mp3" controls="controls">
 								<p>Seu navegador não suporta o elemento audio </p>
 								</audio></a>
 							
@@ -120,7 +120,7 @@
 <%-- 								src="${pageContext.request.contextPath}/resources/images/play3.png" --%>
 <!-- 								alt="placeholder icon" />	 -->
 								
-								<audio src="${pageContext.request.contextPath}/resources/audio/audio.mp3" controls="controls">
+								<audio src="${pageContext.request.contextPath}/resources/audio/Cópia de Gravação da ata Nº01  em 02-02-2015.mp3" controls="controls">
 								<p>Seu navegador não suporta o elemento audio </p>
 								</audio></a>
 								

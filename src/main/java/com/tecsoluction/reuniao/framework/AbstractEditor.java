@@ -6,7 +6,8 @@ import com.tecsoluction.reuniao.dao.DaoGenerico;
 
 /**
  * Created by clebr on 17/07/2016.
- */
+ */   
+
 public class AbstractEditor<Entity> extends PropertyEditorSupport {
 
     private final DaoGenerico<Entity,Long> dao;

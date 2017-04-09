@@ -47,8 +47,8 @@
                         <a href="${pageContext.request.contextPath}/ata/editar?id=${ata.id}"  title="aaa"><img src="${pageContext.request.contextPath}/resources/images/editar.png" alt="placeholder icon" /></a>
                          <a href="${pageContext.request.contextPath}/ata/delete?id=${ata.id}" title="bbb"><img src="${pageContext.request.contextPath}/resources/images/excluir.png" alt="placeholder icon" /></a>
                           
-                          											<a
-							href="${pageContext.request.contextPath}/ata/converter?id=${reuniao.id}"
+                          	<a
+							href="${pageContext.request.contextPath}/ata/converter?id=${ata.id}"
 							title="bbb">
 							
 							<img
@@ -76,7 +76,7 @@
                         <a href="${pageContext.request.contextPath}/ata/editar?id=${ata.id}"  title="aaa"><img src="${pageContext.request.contextPath}/resources/images/editar.png" alt="placeholder icon" /></a>
                          <a href="${pageContext.request.contextPath}/ata/delete?id=${ata.id}" title="bbb"><img src="${pageContext.request.contextPath}/resources/images/excluir.png" alt="placeholder icon" /></a>
                           
-                             											<a
+                            <a
 							href="${pageContext.request.contextPath}/ata/converter?id=${ata.id}"
 							title="bbb">
 							

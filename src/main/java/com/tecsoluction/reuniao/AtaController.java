@@ -1,6 +1,8 @@
 package com.tecsoluction.reuniao;
 
 
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -169,9 +171,25 @@ public class AtaController  {
 //	        ModelAndView visualizacao = new ModelAndView("visualizacaoata");
 //	        visualizacao.addObject("ata", atavis);
 	        
+	        String path = null;
+	        String pathauto = null;
+	        
+	        
+	        try {
+				
+	        	 path = new File("c://Users//winds//Documents//workspace-sts-3.7.2.RELEASE//camaraFinal//src//main//webapp//resources//ata//tag//atareplace.doc").getPath();
+	        	 pathauto = new File("c://Users//winds//Documents//workspace-sts-3.7.2.RELEASE//camaraFinal//src//main//webapp//resources//ata//auto//ataauto.doc").getCanonicalPath();
+
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+	        
+	        
 	        // primeiro parametro arquivo de modelo com as tags na máquina local
 	        // segundo parametro onde será salvo o documento gerado
-	        WordPoi word = new WordPoi("c://ata.doc","C://Users//winds//Documents//atareplace.doc");
+	        
+	        WordPoi word = new WordPoi(path,pathauto);
 	         word.replaceTag("NOME", "WINDSON");
 	         word.replaceTag("CPF", "963-289-594-00");
 	         word.write();
